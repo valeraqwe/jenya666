@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart - RedStore | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+        <a href="cart.html">
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <div id="cartCounter" class="cart-counter">0</div>
+            <!-- Здесь будет отображаться количество товаров в корзине -->
+            <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+        </a>
+    </div>
+    <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+</div>
+
+
+<!--------------Cart Items details--------------->
+<div class="small-container cart-page">
+    <!-- Отображение товаров в корзине -->
+    <table class="cart-table">
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Количество</th>
+            <th>Удалить</th>
+        </tr>
+        <!-- Здесь будут отображаться товары в корзине -->
+    </table>
+
+    <div class="total-price">
+        <table class="cart-total-table">
+            <tr>
+                <td>Итого:</td>
+                <td id="cart-total">0.00</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Форма оформления заказа -->
+    <form action="process_order.php" method="post" id="orderForm">
+        <input type="text" name="customer_name" placeholder="Ваше имя">
+        <input type="text" name="customer_address" placeholder="Адрес">
+        <input type="text" name="customer_phone" placeholder="Телефон">
+        <input type="hidden" name="cart_data" id="cartData">
+        <input type="hidden" name="total_sum" id="totalSum">
+        <input type="hidden" name="total_items" id="totalItems">
+        <button type="submit">Оформить заказ</button>
+    </form>
+
+
+    <div id="thankYouPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Спасибо за ваш заказ!</h2>
+            <p>Ваш заказ успешно оформлен и скоро будет доставлен.</p>
+        </div>
+    </div>
+</div>
+<!----------Footer--------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col2">
+                <img src="images/logo-white.png">
+                <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+            </div>
+            <div class="footer-col3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter
+                    <li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2020 - Easy Tutorials</p>
+    </div>
+
+</div>
+
+
+<!-------------js for toggle menu-------------->
+
+<script>
+
+    let MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight === "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+
+
+</script>
+<!-- Другие скрипты и содержание -->
+<!-- ... -->
+<script>
+    // Ваш существующий JS-код
+    // ...
+
+    document.getElementById("orderForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Собираем данные о товарах
+        let cartInfo = cart.map(product => {
+            return `${product.name} (Цена: ${product.price})`;
+        }).join("\n");
+
+        // Сохраняем в скрытое поле
+        document.getElementById("cartData").value = cartInfo;
+
+        // Суммируем общую стоимость и количество товаров
+        let totalSum = cart.reduce((sum, product) => {
+            return sum + parseFloat(product.price.replace('$', ''));
+        }, 0);
+
+        let totalItems = cart.length;
+
+        // Сохраняем в другие скрытые поля
+        function updateTotalPriceAndItems() {
+            let totalSum = 0;
+            let totalItems = 0;
+
+            cart.forEach(product => {
+                const productPrice = parseFloat(product.price.replace("$", ""));
+                if (!isNaN(productPrice)) {
+                    totalSum += productPrice;
+                    totalItems += 1;
+                }
+            });
+
+            // Здесь устанавливаем значения в скрытые поля
+            document.getElementById("totalSum").value = totalSum.toFixed(2);
+            document.getElementById("totalItems").value = totalItems;
+        }
+
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Собираем данные о товарах
+            let cartInfo = cart.map(product => {
+                return `${product.name} (Цена: ${product.price})`;
+            }).join("\n");
+
+            // Сохраняем в скрытое поле
+            document.getElementById("cartData").value = cartInfo;
+
+            // Обновляем общую стоимость и количество
+            updateTotalPriceAndItems();
+
+            // Создаем объект URLSearchParams
+            const formData = new FormData(this);
+            const searchParams = new URLSearchParams();
+
+            for (const [key, value] of formData.entries()) {
+                searchParams.append(key, value);
+            }
+
+            // AJAX-запрос на сервер
+            fetch('process_order.php', {
+                method: 'POST',
+                body: searchParams,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Server response:', data);
+                    if (data.result === true) {
+                        // После успешной отправки
+                        clearCart();
+                        showPopup();
+                    } else {
+                        alert('Что-то пошло не так, пожалуйста, попробуйте ещё раз.');
+                    }
+                })
+                .catch((error) => console.error('Fetch error:', error));
+        });
+    });
+</script>
+</body>
+</html>
+
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
+

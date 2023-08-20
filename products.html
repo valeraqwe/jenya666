@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - RedStore | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+        <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+        <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
+        <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+    </div>
+</div>
+
+
+<!----------------- title -------------->
+<div class="small-container">
+    <div class="row row-2">
+        <h2>Всі продукти</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-4" id="product-1">
+            <img src="images/product-1.jpg">
+            <h4><a href="product-details.html">Red Printed T-Shirt</a></h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$50.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="1" >Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-2">
+            <img src="images/product-2.jpg">
+            <h4>HRX Sports Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$75.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="2" >Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-3">
+            <img src="images/product-3.jpg">
+            <h4>HRX Gray Trackpants</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$45.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="3" >Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-4">
+            <img src="images/product-4.jpg">
+            <h4>Blue Printed T-Shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$55.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="4" >Додати в кошик</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4" id="product-5">
+            <img src="images/product-5.jpg">
+            <h4>Puma Gray Sports Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$95.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="5" >Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-6">
+            <img src="images/product-6.jpg">
+            <h4>Black Printed T-Shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$55.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="6">Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-7">
+            <img src="images/product-7.jpg">
+            <h4>HRX Set of 3 Socks</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$30.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="7">Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-8">
+            <img src="images/product-8.jpg">
+            <h4>Black Fossil Watch</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$120.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="8">Додати в кошик</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4" id="product-9">
+            <img src="images/product-9.jpg">
+            <h4>Black Sportx Watch</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$135.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="9">Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-10">
+            <img src="images/product-10.jpg">
+            <h4>Black HRX Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$50.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="10" >Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-11">
+            <img src="images/product-11.jpg">
+            <h4>Gray Nike Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$55.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="11" >Додати в кошик</button>
+        </div>
+        <div class="col-4" id="product-12">
+            <img src="images/product-12.jpg">
+            <h4>HRX Black Trackpants</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$75.00</p>
+            <button class="btn add-to-cart-btn" data-product-id="12" >Додати в кошик</button>
+        </div>
+    </div>
+</div>
+
+<!----------Footer--------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col2">
+                <img src="images/greenstore%201.png">
+                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">2023 - Всі права захищені.</p>
+    </div>
+
+</div>
+
+<!-------------js for toggle menu-------------->
+
+<script>
+
+    let MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
