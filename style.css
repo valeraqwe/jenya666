@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'OpenSans', sans-serif;
 }
 a{
     text-decoration: none;
@@ -13,9 +13,10 @@ a{
 p{
     color: #555;
 }
-.header{
-    background: radial-gradient(#fff, #c3f5c3);
+.header {
+    background: radial-gradient(#fff, #9eff9e); /* здесь #9eff9e - это зеленый цвет */
 }
+
 
 .container{
     max-width: 1300px;
@@ -24,33 +25,16 @@ p{
     padding-right: 25px;
 
 }
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     padding: 20px;
-}
-nav{
-    flex: 1;
-    text-align: right;
-}
-nav ul{
-    display: inline-block;
-    list-style-type: none;
-}
-nav ul li{
-    display: inline-block;
-    margin-right: 20px;
-}
-.menu-icon{
-    display: none;
-    width: 28px;
-    margin-left: 20px;
-}
-.row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
 }
 
 nav {
@@ -66,6 +50,29 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin-right: 20px;
+    position: relative;
+}
+
+/* Стили для анимированной полоски при наведении */
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #ff6600; /* Цвет полоски */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 .menu-icon {
@@ -74,34 +81,16 @@ nav ul li {
     margin-left: 20px;
 }
 
-/* Обновленные стили для ссылок в навбаре */
-nav ul li a {
-    position: relative;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-nav ul li a::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #00aa00; /* Цвет андерлайна ближе к зеленому */
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
+    /*---------*/
 
-nav ul li a:hover {
-    color: #00aa00; /* Новый цвет ссылки при наведении */
-}
 
-nav ul li a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
 .header .row{
     margin-top: 70px;
 }
@@ -127,31 +116,46 @@ nav ul li a:hover::before {
     margin: 30px 0;
     border-radius: 30px;
     transition: background 0.5s;
+
 }
 .btn:hover{
     background: #563434;
 }
 
 /*-----------------------------*/
-.categories{
+.categories {
     margin: 70px 0;
 }
 
-.small-container{
+.small-container {
     max-width: 1080px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
 }
 
-.col-3{
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-3 {
     flex-basis: 30%;
     min-width: 250px;
     margin-bottom: 30px;
 }
-.col-3 img{
-    width: 100%;
+
+.category-item {
+    text-align: center;
 }
+
+.category-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
 /*-------featured product--------------*/
 
 .title{
@@ -200,8 +204,8 @@ h4{
 
 
 /*-----------offer-------------*/
-    .offer{
-    background: radial-gradient(#fff, #c3f5c3);
+.offer{
+    background: radial-gradient(#fff, #9eff9e); /* здесь #9eff9e - это зеленый цвет */
     margin-top: 80px;
     padding: 30px 0;
 }
@@ -210,7 +214,6 @@ h4{
 }
 small{
     color: #555;
-    margin-bottom: 20px;
 }
 
 /*--------------------testimonial---------------*/
@@ -330,29 +333,29 @@ small{
 @media only screen and (max-width: 800px) {
 
 
-nav ul{
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background: #333;
-    width: 100%;
-    overflow: hidden;
-    transition: 1s;
-    max-height: 0;
-    transition:max-height 0.5s;
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: 1s;
+        max-height: 0;
+        transition:max-height 0.5s;
     }
 
-nav ul li{
-    display: block;
-    margin-right: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-nav ul li a{
+    nav ul li a{
         color: #fff;
     }
 
-.menu-icon{
+    .menu-icon{
         display: block;
         cursor: pointer;
     }
@@ -363,7 +366,7 @@ nav ul li a{
 @media only screen and (max-width: 600px){
 
     .row{
-      text-align: center;
+        text-align: center;
     }
 
     .col-1, .col-2, .col-3, .col-4{
@@ -616,7 +619,7 @@ form a{
     font-size: 12px;
 }
 #LoginForm{
-     left: -300px;
+    left: -300px;
 }
 #RegForm{
     left: 0;
@@ -627,24 +630,18 @@ form a{
     color: #333;
     margin-right: 20px; /* Добавьте отступ справа, чтобы отделить от других элементов */
 }
-
 .phone a {
     text-decoration: none;
     color: #48d048; /* Используйте значение цвета, близкое к зеленому */
     font-weight: bold;
 }
-
 .phone a:hover {
     text-decoration: underline; /* Подчеркивание при наведении */
 }
-
-/* Стили для кнопки "Дивитися всі товари" */
-/* Стили для кнопки "Дивитися всі товари" *//* Стили для кнопки "Дивитися всі товари" */
 .view-all-button {
     text-align: center;
     margin-top: 20px;
 }
-
 .view-all-btn {
     display: inline-block;
     padding: 20px 40px;
@@ -655,7 +652,6 @@ form a{
     border-radius: 30px;
     transition: background-color 0.3s ease;
 }
-
 .view-all-btn:hover {
     background-color: #563434; /* Оранжевый цвет при наведении */
 }
@@ -664,6 +660,426 @@ form a{
     margin: auto;
     padding-top: 80px;
     padding-bottom: 50px;
+}
+.about-col {
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+.about-col img {
+    width: 100%;
+}
+.about-col h1 {
+    padding-top: 0;
+}
+.about-col h1 p {
+    padding: 15px 0 25px;
+}
+.red-btn {
+    border: 1px solid #f44336;
+    background: transparent;
+    color: #f44336;
+}
+.red-btn:hover {
+    color: #fff;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+.popup-content {
+    margin: 15% auto;
+    position: relative;
+    padding: 15px;
+    background-color: #fff;
+    width: 50%;
+    width: 40%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+/* Стили для мобильных устройств */
+@media (max-width: 767px) {
+    .popup-content {
+        width: 90%; /* Увеличиваем ширину поп-апа на мобильных устройствах */
+        margin: 5% auto; /* Уменьшаем верхний и нижний отступы */
+    }
+}
+.popup-content h2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    font-size: 30px;
+}
+.popup-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 5px 0;
+    font-size: 20px;
+}
+.close {
+    top: 10px;
+    cursor: pointer;
+    right: 30px;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    right: 15px;
+    font-size: 30px;
+    position: absolute;
+}
+.close:hover {
+    color: red;
+}
+button[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+#orderForm {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: 600px;  /* Максимальная ширина формы */
+    margin: auto;      /* Выравнивание по центру */
+}
+.cart-counter {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+.quantity-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 50%;  /* Делает кнопки круглыми */
+    width: 30px;  /* Фиксированная ширина */
+    height: 30px;  /* Фиксированная высота */
+    text-align: center;  /* Выравнивание текста по центру */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 2px;  /* Добавляем небольшой отступ */
+}
+
+.quantity-number {
+    margin: 0 10px;
+    font-size: 16px;
+    display: block;  /* Перенос на новую строку */
+}
+.remove-from-cart-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.empty-cart-message {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.cart-table {
+    display: block;
+}
+.cart-table td {
+    display: block;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+.cart-table th {
+    display: none; /* Hide headers */
+    flex-basis: calc(100% / 4);  /* 4 столбца в таблице */
+    flex-basis: 100%;
+    flex: 1;
+    background-color: #f2f2f2;
+}
+.cart-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    width: 100%;
+}
+@keyframes rowAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cart-row-animation {
+    animation: rowAnimation 0.4s ease-in-out;
+}
+
+.cart-table img {
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-table img:hover {
+    transform: scale(1.2);
+}
+
+button[type=submit] {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+button[type=submit]:hover {
+    background-color: #f0c14b;
+    border-color: #a88734;
+}
+.cart-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+}
+.order-form {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    flex-direction: column;
+    max-width: 600px;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 12px;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+.form-group {
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.order-button {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.order-button:hover {
+    background: #555;
+}
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.form-group select {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.form-group button {
+    background-color: #2da20f;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Корзина */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    align-items: center;
+}
+/* Additional CSS for counter */
+.counter-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows the counter to move to the next line if it doesn't fit */
+}
+.counter {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 5px;
+    width: 25px;
+    text-align: center;
+}
+/* Emoji for delete button */
+.remove-from-cart-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Форма */
+/* Стили для формы */
+/* Стили для формы и инпутов */
+/* Общие стили для инпутов, селектов и текстовых областей */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+    color: #555;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6600;
+    box-shadow: 0 0 4px rgba(255, 102, 0, 0.4);
+}
+
+/* Стили для более привлекательных инпутов */
+.form-group input,
+.form-group select {
+    background-color: #f9f9f9;
+}
+
+/* Стили для текстовых областей */
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical; /* Разрешить изменение высоты текстовой области */
+}
+
+/* Подчеркивание при фокусе на инпуте */
+.form-group input:focus {
+    border-bottom-width: 2px;
+}
+
+/* Стили для плейсхолдера */
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    margin-top: 60px;  /* высота вашего навбара, включая padding */
+}
+
+/* ваш существующий CSS код */
+.popup-message {
+    opacity: 0;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out;
+}
+.quantity-wrapper {
+    display: inline-block;
+    text-align: center;
+    width: 100px;  /* фиксированная ширина */
+    vertical-align: top;  /* выровнять по верхнему краю */
+    margin-top: 10px;  /* отступ сверху для переноса на новую строку */
+}
+
+.sub-header {
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.sub-header h1 {
+    margin-top: 100px;
+}
+
+.about-us {
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    display: flex; /* Flexbox activated */
+    justify-content: space-between;
 }
 
 .about-col {
@@ -679,7 +1095,7 @@ form a{
     padding-top: 0;
 }
 
-.about-col h1 p {
+.about-col p {
     padding: 15px 0 25px;
 }
 
@@ -692,49 +1108,130 @@ form a{
 .red-btn:hover {
     color: #fff;
 }
-.popup {
+
+/* Mobile Screen */
+@media only screen and (max-width: 768px) {
+    .about-us {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .about-col {
+        flex-basis: auto; /* Reset the flex-basis */
+        width: 100%; /* Take full width */
+        padding: 20px 0; /* Adjust padding */
+    }
+
+    .about-col img {
+        margin-top: 20px; /* Add some spacing between the text and the image */
+    }
+}
+.location {
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+
+}
+
+.location iframe {
+    width: 100%;
+}
+
+.contact-us {
+    width: 80%;
+    margin: auto;
+}
+
+.contact-col {
+    margin-bottom: 30px;
+}
+
+.contact-col div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.contact-col div .fa {
+    font-size: 28px;
+    color: #f44336;
+    margin: 10px 30px 10px 10px;
+}
+
+.contact-col div p {
+    padding: 0;
+}
+
+.contact-col div h5 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 400;
+}
+
+.contact-col input, .contact-col textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Modal styles */
+.modal {
     display: none;
     position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
 }
 
-.popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;  /* Измените значение отступа сверху, чтобы поднять модальное окно выше */
     padding: 20px;
-    background: #fff;
+    border: 1px solid #888;
+    width: 50%;  /* Уменьшил ширину до 50% экрана */
+    max-width: 500px;  /* Опционально: задает максимальную ширину, чтобы на больших экранах модальное окно не было слишком широким */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Добавил тень для эстетики */
+    border-radius: 15px;  /* Добавлено: закругление углов */
 }
+
 
 .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
     cursor: pointer;
 }
 
+/* Добавьте эти стили к вашему текущему CSS */
+.fade-out {
+    animation-name: fadeOut;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.phone-number {
+    display: block;
+    font-size: 23px;
+    font-weight: bold;
+    color: #333;
+}

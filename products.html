@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +13,19 @@
 <div class="container">
     <div class="navbar">
         <div class="logo">
-            <a href="index.html"><img src="images/logo.png" width="125px"></a>
+            <a href="index.html"><img src="images/greenstore%201.png" width="125px"></a>
         </div>
         <nav>
             <ul id="MenuItems">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="account.html">Account</a></li>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="products.html">Продукти</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contact.html">Контакти</a></li>
             </ul>
         </nav>
         <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
-        <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
+        <div id="cartCounter" class="cart-counter">0</div>
+        <!-- Здесь будет отображаться количество товаров в корзине -->
         <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
     </div>
 </div>
@@ -36,171 +36,236 @@
     <div class="row row-2">
         <h2>Всі продукти</h2>
     </div>
-
     <div class="row">
         <div class="col-4" id="product-1">
-            <img src="images/product-1.jpg">
-            <h4><a href="product-details.html">Red Printed T-Shirt</a></h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/luxury-papir1.webp">
+                <h4>Туалетний папір "Luxury"<br>1 сорт</h4>
+                <p>800.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="1">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-1">
+                Товар додано до кошика!
             </div>
-            <p>$50.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="1" >Додати в кошик</button>
         </div>
         <div class="col-4" id="product-2">
-            <img src="images/product-2.jpg">
-            <h4>HRX Sports Shoes</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+            <a href="product-details2.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/servetki-classic1.webp">
+                <h4>Серветки 24*24 <br>200 шт.</h4>
+                <p>35.00 грн.</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="2">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-2">
+                Товар додано до кошика!
             </div>
-            <p>$75.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="2" >Додати в кошик</button>
         </div>
         <div class="col-4" id="product-3">
-            <img src="images/product-3.jpg">
-            <h4>HRX Gray Trackpants</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+            <a href="product-details3.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/servetki-komfort.webp">
+                <h4>Серветки 24*24 <br>200 шт.</h4>
+                <p>22.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="3">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-3">
+                Товар додано до кошика!
             </div>
-            <p>$45.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="3" >Додати в кошик</button>
         </div>
         <div class="col-4" id="product-4">
-            <img src="images/product-4.jpg">
-            <h4>Blue Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+            <a href="product-details4.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/vologi-panda1-100.webp">
+                <h4>Вологі серветки <br>100шт.</h4>
+                <p>70.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="4">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-4">
+                Товар додано до кошика!
             </div>
-            <p>$55.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="4" >Додати в кошик</button>
         </div>
     </div>
 
     <div class="row">
         <div class="col-4" id="product-5">
-            <img src="images/product-5.jpg">
-            <h4>Puma Gray Sports Shoes</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+            <a href="product-details5.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/servetki-antimikrob1.webp">
+                <h4>Вологі серветки для немовлят<br>64 шт</h4>
+                <p>40.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="5">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-5">
+                Товар додано до кошика!
             </div>
-            <p>$95.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="5" >Додати в кошик</button>
         </div>
         <div class="col-4" id="product-6">
-            <img src="images/product-6.jpg">
-            <h4>Black Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-            </div>
-            <p>$55.00</p>
+            <a href="product-details6.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/panda15x-1.webp">
+                <h4>Вологі серветки для рук<br>15шт.</h4>
+                <p>11 грн</p>
+            </a>
             <button class="btn add-to-cart-btn" data-product-id="6">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-6">
+                Товар додано до кошика!
+            </div>
         </div>
         <div class="col-4" id="product-7">
-            <img src="images/product-7.jpg">
-            <h4>HRX Set of 3 Socks</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-            </div>
-            <p>$30.00</p>
+            <a href="product-details7.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-posud.webp">
+                <h4>"Helper" засіб для миття<br>посуду 5 кг</h4>
+                <p>200.00 грн</p>
+            </a>
             <button class="btn add-to-cart-btn" data-product-id="7">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-7">
+                Товар додано до кошика!
+            </div>
         </div>
         <div class="col-4" id="product-8">
-            <img src="images/product-8.jpg">
-            <h4>Black Fossil Watch</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>$120.00</p>
+            <a href="product-details8.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-milo1.webp">
+                <h4>"Helper" мило для миття рук<br>5 кг з ароматом яблука</h4>
+                <p>210.00 грн</p>
+            </a>
             <button class="btn add-to-cart-btn" data-product-id="8">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-8">
+                Товар додано до кошика!
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-4" id="product-9">
-            <img src="images/product-9.jpg">
-            <h4>Black Sportx Watch</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>$135.00</p>
+            <a href="product-details9.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-nizne.webp">
+                <h4>"Helper" мило ніжне рідке <br>500 мл</h4>
+                <p>35.00 грн</p>
+            </a>
             <button class="btn add-to-cart-btn" data-product-id="9">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-9">
+                Товар додано до кошика!
+            </div>
         </div>
         <div class="col-4" id="product-10">
-            <img src="images/product-10.jpg">
-            <h4>Black HRX Shoes</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+            <a href="product-details10.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-unitaz.webp">
+                <h4>"Helper" засіб для чищення <br> унітазів</h4>
+                <p>70.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="10">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-10">
+                Товар додано до кошика!
             </div>
-            <p>$50.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="10" >Додати в кошик</button>
         </div>
         <div class="col-4" id="product-11">
-            <img src="images/product-11.jpg">
-            <h4>Gray Nike Shoes</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+            <a href="product-details11.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-antijir.webp">
+                <h4>"Helper" засіб для миття <br>
+                    кухонних поверхонь
+                </h4>
+                <p>70.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="11">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-11">
+                Товар додано до кошика!
             </div>
-            <p>$55.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="11" >Додати в кошик</button>
         </div>
         <div class="col-4" id="product-12">
-            <img src="images/product-12.jpg">
-            <h4>HRX Black Trackpants</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+            <a href="product-details12.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-posud1.webp">
+                <h4>"Helper" засіб для миття посуду
+                    <br>
+                    495 мл. зелений лимон
+                </h4>
+                <p>35.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="12">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-12">
+                Товар додано до кошика!
             </div>
-            <p>$75.00</p>
-            <button class="btn add-to-cart-btn" data-product-id="12" >Додати в кошик</button>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-4" id="product-13">
+            <a href="product-details13.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/DSC_0225.webp">
+                <h4>Туалетний папір "Мордочки"<br>1 сорт</h4>
+                <p>600.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="13">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-13">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-14">
+            <a href="product-details14.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/rushniki-paperovi.webp">
+                <h4>Паперові рушники <br>32 шт.</h4>
+                <p>500.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="14">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-14">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-15">
+            <a href="product-details15.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/v-rushnik.webp">
+                <h4>V-рушник на 24* <br>200 шт.</h4>
+                <p>35.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="15">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-15">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-16">
+            <a href="product-details16.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/servetki 33.webp">
+                <h4>Серветки 33*33 <br>100 шт.</h4>
+                <p>18.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="16">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-16">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4" id="product-17">
+            <a href="product-details17.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/DSC_0225.webp">
+                <h4>Туалетний папір "Мордочки"<br>2 сорт</h4>
+                <p>500.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="17">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-17">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-18">
+            <a href="product-details18.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/helper-grill.webp">
+                <h4>"Helper" професійний засіб<br>для чищення грилю 500 мл.</h4>
+                <p>100.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="18">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-18">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-19">
+            <a href="product-details19.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/servetki-kosmetichni.webp">
+                <h4>Серветки косметичні на 24*<br>300 шт.</h4>
+                <p>30.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="19">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-19">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 <!----------Footer--------------->
@@ -213,11 +278,14 @@
                 <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
             </div>
         </div>
+        <div class="footer-col3">
+            <p class="phone"><a href="tel:+380637848984">+380 63 784 8984</a></p>
+        </div>
         <hr>
         <p class="copyright">2023 - Всі права захищені.</p>
     </div>
-
 </div>
+
 
 <!-------------js for toggle menu-------------->
 
@@ -236,7 +304,23 @@
     }
 
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        addToCartButtons.forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const productId = this.getAttribute('data-product-id');
+                const popup = document.getElementById(`popup-message-${productId}`);
+                popup.style.opacity = '1';
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                }, 1500);
+                // Ваш код для добавления товара в корзину
+            });
+        });
+    });
 
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -22,11 +22,12 @@
                 <ul id="MenuItems">
                     <li><a href="index.html">Головна</a></li>
                     <li><a href="products.html">Продукти</a></li>
-                    <li><a href="">Про нас</a></li>
-                    <li><a href="">Контакти</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
                 </ul>
             </nav>
             <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
             <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
         </div>
         <div class="row">
@@ -34,7 +35,9 @@
                 <h1>Миття та догляд<br>за домом</h1>
                 <p>Забезпечте свій дім чистотою та свіжістю завдяки нашій побутовій хімії та засобами гігієни. Легко
                     подолайте забруднення з ефективними засобами.</p>
-                <a href="#" class="btn">Детальніше &#8594;</a>
+                <br>
+                <a href="tel:+380637848984" class="phone-number">+380 63 784 8984</a>
+                <a href="contact.html#quickOrderForm" class="btn">Зробити швидке замовлення ✔️</a>
             </div>
             <div class="col-2">
                 <img src="images/bezopasnayabytovayakhimiya666.png">
@@ -48,17 +51,24 @@
     <div class="small-container">
         <div class="row">
             <div class="col-3">
-                <img src="images/category-1.jpg">
+                <div class="category-item">
+                    <h4 class="category-text">Ми гарантуємо вам високу якість товарів та 💯% задоволеність наших клієнтів.</h4>
+                </div>
             </div>
             <div class="col-3">
-                <img src="images/category-2.jpg">
+                <div class="category-item">
+                    <h4 class="category-text">Ми пропонуємо швидку доставку за 1-2 дні, використовуючи різні зручні види транспорту 🚌🚄.</h4>
+                </div>
             </div>
             <div class="col-3">
-                <img src="images/category-3.jpg">
+                <div class="category-item">
+                    <h4 class="category-text">Ваше задоволення є нашим пріоритетом 😊. Ми завжди готові робити все, щоб ви залишилися задоволені своїм вибором 🌟.</h4>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-------------- Our Featured Products -------------->
 
@@ -66,114 +76,98 @@
 <div class="small-container">
     <h2 class="title">Рекомендовані товари</h2>
     <div class="row">
-        <div class="col-4">
-            <a href="product-details.html"><img src="images/panda_papir2.jpg"></a>
-            <h4><a href="product-details.html">Туалетний папір "Сніжна панда"</a></h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+        <div class="col-4" id="product-1">
+            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/luxury-papir1.webp">
+                <h4>Туалетний папір "Luxury"<br>1 сорт</h4>
+                <p>800.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="1">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-1">
+                Товар додано до кошика!
             </div>
-            <p>$50.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="1">Додати в кошик</a>
         </div>
-        <div class="col-4">
-            <img src="images/product-2.jpg">
-            <h4>HRX Sports Shoes</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+        <div class="col-4" id="product-2">
+            <a href="product-details2.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/servetki-classic1.webp">
+                <h4>Серветки 24*24 <br>200 шт.</h4>
+                <p>35.00 грн.</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="2">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-2">
+                Товар додано до кошика!
             </div>
-            <p>$75.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="2">Додати в кошик</a>
         </div>
-        <div class="col-4">
-            <img src="images/product-3.jpg">
-            <h4>HRX Gray Trackpants</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+        <div class="col-4" id="product-4">
+            <a href="product-details4.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/vologi-panda1-100.webp">
+                <h4>Вологі серветки <br>100шт.</h4>
+                <p>70.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="4">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-4">
+                Товар додано до кошика!
             </div>
-            <p>$45.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="3">Додати в кошик</a>
         </div>
-        <div class="col-4">
-            <img src="images/product-4.jpg">
-            <h4>Blue Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+        <div class="col-4" id="product-18">
+            <a href="product-details10.html">  <!-- Добавлен тег <a> -->
+                <img src="site_webp2/helper-grill.webp">
+                <h4>"Helper" професійний засіб<br>для чищення грилю 500 мл.</h4>
+                <p>100.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="18">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-18">
+                Товар додано до кошика!
             </div>
-            <p>$55.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="4">Додати в кошик</a>
         </div>
     </div>
     <h2 class="title">Нещодавні продукти</h2>
     <div class="row">
-        <div class="col-4">
-            <img src="images/product-5.jpg">
-            <h4>Puma Gray Sports Shoes</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+        <div class="col-4" id="product-3">
+            <a href="product-details3.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/servetki-komfort.webp">
+                <h4>Серветки 24*24 <br>200 шт.</h4>
+                <p>22.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="3">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-3">
+                Товар додано до кошика!
             </div>
-            <p>$95.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="5">Додати в кошик</a>
         </div>
-        <div class="col-4">
-            <img src="images/product-6.jpg">
-            <h4>Black Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+        <div class="col-4" id="product-7">
+            <a href="product-details7.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-posud.webp">
+                <h4>"Helper" засіб для миття<br>посуду 5 кг</h4>
+                <p>200.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="7">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-7">
+                Товар додано до кошика!
             </div>
-            <p>$55.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="6">Додати в кошик</a>
         </div>
-        <div class="col-4">
-            <img src="images/product-7.jpg">
-            <h4>HRX Set of 3 Socks</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+        <div class="col-4" id="product-8">
+            <a href="product-details8.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-milo1.webp">
+                <h4>"Helper" мило для миття рук<br>5 кг з ароматом яблука</h4>
+                <p>210.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="8">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-8">
+                Товар додано до кошика!
             </div>
-            <p>$30.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="7">Додати в кошик</a>
         </div>
-        <div class="col-4">
-            <img src="images/product-8.jpg">
-            <h4>Black Fossil Watch</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+        <div class="col-4" id="product-10">
+            <a href="product-details10.html">  <!-- Добавлен тег <a> -->
+                <img src="images/site_webp/helper-unitaz.webp">
+                <h4>"Helper" засіб для чищення <br> унітазів</h4>
+                <p>70.00 грн</p>
+            </a>
+            <button class="btn add-to-cart-btn" data-product-id="10">Додати в кошик</button>
+            <div class="popup-message" id="popup-message-10">
+                Товар додано до кошика!
             </div>
-            <p>$120.00</p>
-            <a href="#" class="btn add-to-cart-btn" data-product-id="8">Додати в кошик</a>
         </div>
-    </div>
+        </div>
     <!-- Кнопка "Дивитися всі товари" -->
     <div class="view-all-button">
         <a href="products.html" class="btn view-all-btn">Дивитися всі товари</a>
@@ -195,7 +189,7 @@
                     розроблені з урахуванням найсучасніших технологій для найефективнішого прибирання і догляду за вашим
                     домом та вашими особистими потребами.</small>
                 <br>
-                <a href="#" class="btn">Дізнатися більше &#8594;</a>
+                <a href="about.html" class="btn">Дізнатися більше &#8594;</a>
             </div>
         </div>
     </div>
@@ -277,20 +271,19 @@
             </div>
         </div>
         <div class="footer-col3">
-            <p class="phone"><a href="tel:+123456789">+1 (234) 567-89</a></p>
+            <p class="phone"><a href="tel:+380637848984">+380 63 784 8984</a></p>
         </div>
         <hr>
         <p class="copyright">2023 - Всі права захищені.</p>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/basket.js/0.5.2/basket.full.min.js"></script>
 
 
 <!-------------js for toggle menu-------------->
 
 <script>
 
-    var MenuItems = document.getElementById("MenuItems");
+    let MenuItems = document.getElementById("MenuItems");
 
     MenuItems.style.maxHeight = "0px";
 
@@ -303,8 +296,24 @@
     }
 
 </script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        addToCartButtons.forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const productId = this.getAttribute('data-product-id');
+                const popup = document.getElementById(`popup-message-${productId}`);
+                popup.style.opacity = '1';
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                }, 1500);
+                // Ваш код для добавления товара в корзину
+            });
+        });
+    });
 
-
+</script>
 </body>
 </html>
 

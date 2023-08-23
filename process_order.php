@@ -1,24 +1,43 @@
 <?php
-$token = "6308892385:AAEfSUnU2RBscWmrRTx_OOEMTfmmA8mqYfA";
-$chat_id = "-946666122";
+$token = "6449904505:AAGb70C0Cx2h9q7dIAFZgFzrNyQSQq9hoZY";
+$chat_id = "-808357395";
 
 $customer_name = $_POST['customer_name'];
-$customer_address = $_POST['customer_address'];
 $customer_phone = $_POST['customer_phone'];
 $cart_data = $_POST['cart_data'];
-$totalSum = $_POST['total_sum'];
-$totalItems = $_POST['total_items'];
+$customer_city = $_POST['customer_city'];
+$customer_region = $_POST['customer_region'];
+$delivery_method = $_POST['delivery_method'];
+$post_office = $_POST['post_office'];
+$order_comment = $_POST['order_comment'];
+
+if (empty($customer_name) || empty($customer_phone) || empty($cart_data)) {
+    header('Content-Type: application/json');
+    echo json_encode(['result' => false, 'error' => 'All fields are required']);
+    exit();
+}
+
+$cart_items = json_decode($cart_data, true);
+
+$total_sum = 0;
+$cart_text = "";
+foreach ($cart_items as $item) {
+    $price = floatval(str_replace('₴', '', $item['price']));
+    $total_sum += $price * $item['quantity'];  // Учитываем количество
+    $cart_text .= "{$item['name']} (Цена: ₴{$item['price']}, Количество: {$item['quantity']})\n";
+}
 
 $message = "Новый заказ:\n";
 $message .= "Имя: $customer_name\n";
-$message .= "Адрес: $customer_address\n";
 $message .= "Телефон: $customer_phone\n";
-$message .= "Общая сумма: $totalSum\n";
-$message .= "Общее количество: $totalItems\n";
-$message .= "Товары:\n$cart_data";
+$message .= "Город: $customer_city\n";
+$message .= "Область: $customer_region\n";
+$message .= "Способ доставки: " . ($delivery_method === 'new_post' ? 'Новая Почта' : 'Укрпочта') . "\n";
+$message .= "Номер отделения: $post_office\n";
+$message .= "Комментарий: $order_comment\n";
+$message .= "Корзина: \n$cart_text";
+$message .= "Общая сумма: ₴$total_sum гривен\n";
 
-
-// Инициализация cURL сессии
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot{$token}/sendMessage");
 curl_setopt($ch, CURLOPT_POST, 1);
@@ -26,11 +45,8 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, "chat_id={$chat_id}&parse_mode=html&text={$
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $result = curl_exec($ch);
-
-// Закрыть cURL сессию
 curl_close($ch);
 
-// Вернуть JSON-ответ
 header('Content-Type: application/json');
 echo json_encode(['result' => !($result === false)]);
 

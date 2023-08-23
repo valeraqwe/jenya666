@@ -1,46 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Пустой массив для хранения товаров в корзине
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    // Найти все кнопки "Добавить в корзину" на странице
     const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
 
-    // Добавить обработчик события для каждой кнопки
     addToCartButtons.forEach((button) => {
         button.addEventListener("click", function(event) {
-            // Получить ID товара из атрибута кнопки
             const productId = event.target.getAttribute("data-product-id");
-
-            // Получить название и цену товара
             const productName = document.querySelector(`#product-${productId} h4`).innerText;
             const productPrice = document.querySelector(`#product-${productId} p`).innerText;
+            const productImageURL = document.querySelector(`#product-${productId} img`).src;
 
-            // Создать объект товара
-            const product = {
-                id: productId,
-                name: productName,
-                price: productPrice
-            };
+            const existingProduct = cart.find(product => product.id === productId);
 
-            // Добавить товар в корзину
-            cart.push(product);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                const product = {
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    image: productImageURL,
+                    quantity: 1  // добавляем поле для количества
+                };
+                cart.push(product);
+            }
 
-            // Сохранить корзину в LocalStorage
             localStorage.setItem("cart", JSON.stringify(cart));
-
-            // Обновить счетчик корзины (если он есть)
             updateCartCounter();
         });
     });
 
-    // Функция для обновления счетчика корзины
     function updateCartCounter() {
+        let totalItems = 0;
+        cart.forEach(product => {
+            totalItems += product.quantity;
+        });
         const counterElement = document.querySelector("#cartCounter");
         if (counterElement) {
-            counterElement.innerText = cart.length;
+            counterElement.innerText = totalItems;
         }
     }
 
-    // Обновить счетчик при загрузке страницы
     updateCartCounter();
 });

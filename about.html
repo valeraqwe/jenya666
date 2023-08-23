@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -21,34 +22,55 @@
                 <ul id="MenuItems">
                     <li><a href="index.html">Головна</a></li>
                     <li><a href="products.html">Продукти</a></li>
-                    <li><a href="">Про нас</a></li>
-                    <li><a href="">Контакти</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
                 </ul>
             </nav>
             <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
             <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Про нас</h1>
+                <p>Забезпечте свій дім чистотою та свіжістю завдяки нашій побутовій хімії та засобами гігієни. Легко
+                    подолайте забруднення з ефективними засобами.</p>
+            </div>
+            <div class="col-2">
+                <img src="images/bezopasnayabytovayakhimiya666.png">
+            </div>
         </div>
     </div>
 </div>
 
+<!-- about us content -->
 <section class="about-us">
     <div class="row">
         <div class="about-col">
-            <h1>We are the world's largest university</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, aut.
-                Quas a facilis quo accusantium, tempore molestiae autem,
-                dolores cum quidem amet sequi corrupti velit aperiam placeat atque aut culpa.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, aut.
-                Quas a facilis quo accusantium, tempore molestiae autem,
-                dolores cum quidem amet sequi corrupti velit aperiam placeat atque aut culpa</p>
-            <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+            <h1>Ми - українська компанія з виготовлення побутової хімії</h1>
+            <p>Наша компанія успішно працює на ринку вже протягом 5 років. За цей час ми здобули великий досвід у виробництві якісних та ефективних засобів для прибирання та догляду за помешканнями та приміщеннями. Ми пишаємося своєю репутацією та надійністю серед наших клієнтів.</p>
+            <p>Мийні та очищувальні засоби відіграють важливу роль у нашому повсякденному житті. За їх допомогою можна ефективно видаляти мікробів та забруднення, тим самим запобігаючи поширенню інфекційних захворювань. Крім того, вони дозволяють контролювати кількість алергенів, таких як пил та пліснява. Підтримання чистоти в будь-якому приміщенні, чи то будинок, офіс, ресторан чи лікарня, має позитивний вплив на здоров'я людини, підвищуючи рівень комфорту.</p>
         </div>
         <div class="about-col">
-            <img src="images/about.jpg" alt="about">
+            <img src="images/zavod-himiya.jpg" alt="про нас">
         </div>
     </div>
-
 </section>
+
+<!------------------ featured categories --------------->
+
+
+<!-------------- Our Featured Products -------------->
+
+
+
+<!----------offer--------------->
+
+
+<!----------testimonial--------------->
+
+<!----------Brands--------------->
+<!----------Footer--------------->
 
 <div class="footer">
     <div class="container">
@@ -59,19 +81,20 @@
             </div>
         </div>
         <div class="footer-col3">
-            <p class="phone"><a href="tel:+123456789">+1 (234) 567-89</a></p>
+            <p class="phone"><a href="tel:+380637848984">+380 63 784 8984</a></p>
         </div>
         <hr>
         <p class="copyright">2023 - Всі права захищені.</p>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/basket.js/0.5.2/basket.full.min.js"></script>
 
 
 <!-------------js for toggle menu-------------->
 
 <script>
 
-    var MenuItems = document.getElementById("MenuItems");
+    let MenuItems = document.getElementById("MenuItems");
 
     MenuItems.style.maxHeight = "0px";
 
@@ -84,8 +107,24 @@
     }
 
 </script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        addToCartButtons.forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const productId = this.getAttribute('data-product-id');
+                const popup = document.getElementById(`popup-message-${productId}`);
+                popup.style.opacity = '1';
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                }, 1500);
+                // Ваш код для добавления товара в корзину
+            });
+        });
+    });
 
-
+</script>
 </body>
 </html>
 

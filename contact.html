@@ -1,10 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenStore | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/greenstore%201.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="products.html">Продукти</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
+            <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Наші контакти</h1>
+                <p>Забезпечте свій дім чистотою та свіжістю завдяки нашій побутовій хімії та засобами гігієни. Легко
+                    подолайте забруднення з ефективними засобами.</p>
+            </div>
+            <div class="col-2">
+                <img src="images/bezopasnayabytovayakhimiya666.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="contact-us" style="margin-top: 23px">
+
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+          <h5>Україна, Одеса</h5>
+        </span>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+          <h5>+380 63 784 8984</h5>
+        </span>
+            </div>
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span>
+          <h5>zavod.himiya@gmail.com</h5>
+        </span>
+            </div>
+        </div>
+
+
+        <div class="contact-col" id="quickOrderForm">
+            <h3>Зробити швидке замовлення</h3>
+            <form action="contact_form_handler.php" method="post" id="contactForm" class="contact-col">
+                <input type="text" id="customer_name" name="customer_name" placeholder="Ваше ім'я" required>
+                <input type="tel" id="customer_phone" name="customer_phone" placeholder="Ваш телефон" required>
+                <textarea id="message_content" name="message_content" placeholder="Ваш коментар" rows="4"></textarea>
+                <button type="submit" class="hero-btn red-btn">Відправити</button>
+            </form>
+        </div>
+
+        <!-- End of Order Form -->
+
+        <!-- Thank You Popup -->
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Дякуємо за ваше повідомлення!</h2>
+                <p>Ми скоро зв'яжемося з вами.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+<!------------------ featured categories --------------->
+
+
+<!-------------- Our Featured Products -------------->
+
+
+
+<!----------offer--------------->
+
+
+<!----------testimonial--------------->
+
+<!----------Brands--------------->
+<!----------Footer--------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col2">
+                <img src="images/greenstore%201.png">
+                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+            </div>
+        </div>
+        <div class="footer-col3">
+            <p class="phone"><a href="tel:+380637848984">+380 63 784 8984</a></p>
+        </div>
+        <hr>
+        <p class="copyright">2023 - Всі права захищені.</p>
+    </div>
+</div>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Создаем объект FormData
+        const formData = new FormData(document.getElementById("contactForm"));
+
+        // AJAX-запрос на сервер
+        fetch('contact_form_handler.php', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === true) {
+                    showModal();  // показываем модальное окно
+                    document.getElementById("contactForm").reset();  // Очистка формы
+                } else {
+                    alert('Что-то пошло не так, пожалуйста, попробуйте ещё раз.');
+                }
+            })
+            .catch((error) => console.error('Fetch error:', error));
+    });
+</script>
+<script>
+    // Получите модальное окно и элемент "Закрыть"
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    // При клике на элемент "Закрыть" закройте модальное окно
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // При клике вне модального окна закройте его
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Функция для отображения модального окна
+    function showModal() {
+        modal.style.display = "block";
+
+        // Установите таймер на 2 секунды, после которого модальное окно начнет плавно исчезать
+        setTimeout(function() {
+            modal.classList.add('fade-out');
+
+            // После завершения анимации скрываем модальное окно и удаляем класс fade-out
+            setTimeout(function() {
+                modal.style.display = "none";
+                modal.classList.remove('fade-out');
+            }, 2000);  // это время должно соответствовать duration вашей CSS-анимации
+        }, 2000);
+    }
+
+
+</script>
+
+<!-------------js for toggle menu-------------->
+
+<script>
+
+    let MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+
+</script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>
+
