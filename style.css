@@ -14,8 +14,9 @@ p{
     color: #555;
 }
 .header {
-    background: radial-gradient(#fff, #9eff9e); /* здесь #9eff9e - это зеленый цвет */
+    margin-top: 130px;
 }
+
 
 
 .container{
@@ -24,6 +25,12 @@ p{
     padding-left: 25px;
     padding-right: 25px;
 
+}
+
+.slideshow-container {
+    position: relative;
+    margin: auto;
+    max-width: 2000px;
 }
 .navbar {
     display: flex;
@@ -94,9 +101,10 @@ nav ul li a:hover::after {
 .header .row{
     margin-top: 70px;
 }
-.col-2{
-    flex-basis: 50%;
-    min-width: 300px;
+.col-2 {
+    flex-basis: 100%; /* Занимаем всю доступную ширину */
+    max-width: 300px; /* Максимальная ширина */
+    text-align: center; /* Выравниваем текст по центру */
 }
 
 .col-2 img{
@@ -110,7 +118,7 @@ nav ul li a:hover::after {
 }
 .btn{
     display: inline-block;
-    background: #ff523b;
+    background: #624e93;
     color: #fff;
     padding: 8px 30px;
     margin: 30px 0;
@@ -120,6 +128,10 @@ nav ul li a:hover::after {
 }
 .btn:hover{
     background: #563434;
+}
+
+.hidden-select {
+    display: none;
 }
 
 /*-----------------------------*/
@@ -136,8 +148,9 @@ nav ul li a:hover::after {
 
 .row {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    padding-top: 10px;
 }
 
 .col-3 {
@@ -312,6 +325,11 @@ small{
 .app-logo img{
     width: 140px;
 }
+.logo img {
+    width: 220px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота для поддержки соотношения сторон */
+}
+
 
 .footer li{
     display: block;
@@ -372,6 +390,7 @@ small{
     .col-1, .col-2, .col-3, .col-4{
 
         flex-basis: 100%;
+
     }
 }
 
@@ -1231,7 +1250,39 @@ button[type=submit]:hover {
 }
 .phone-number {
     display: block;
-    font-size: 23px;
+    font-size: 28px;
     font-weight: bold;
     color: #333;
+    margin-right: 23px; /* Измените значение по вашему усмотрению */
+}
+
+
+.contact-icons {
+    display: flex;
+    justify-content: center; /* Выравнивание по горизонтали по центру */
+    padding-bottom: 20px;
+}
+
+.contact-icons a {
+    margin-right: 23px; /* Пространство между иконками */
+}
+
+.row.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-container1{
+    text-align: center;
+}
+.btn-container2{
+    text-align: center;
+}
+.btn-container3{
+    text-align: center;
+}
+.btn-container4{
+    text-align: center;
 }
