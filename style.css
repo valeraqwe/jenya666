@@ -71,7 +71,7 @@ nav ul li a::after {
     display: block;
     width: 0;
     height: 2px;
-    background-color: #ff6600; /* Цвет полоски */
+    background-color: #FF1493; /* Цвет полоски */
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -127,8 +127,9 @@ nav ul li a:hover::after {
 
 }
 .btn:hover{
-    background: #563434;
+    background: #FF1493;
 }
+
 
 .hidden-select {
     display: none;
