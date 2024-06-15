@@ -1,6 +1,6 @@
 <?php
-$token = "6449904505:AAGb70C0Cx2h9q7dIAFZgFzrNyQSQq9hoZY";
-$chat_id = "-808357395";
+$token = "YOUR_BOT_TOKEN";
+$chat_id = "YOUR_CHAT_ID";
 
 $customer_name = $_POST['customer_name'];
 $customer_phone = $_POST['customer_phone'];
@@ -28,7 +28,7 @@ foreach ($cart_items as $item) {
 }
 
 $message = "Новый заказ:\n";
-$message .= "Имя: $customer_name\n";
+$message .= "ПІБ: $customer_name\n";
 $message .= "Телефон: $customer_phone\n";
 $message .= "Город: $customer_city\n";
 $message .= "Область: $customer_region\n";
@@ -43,10 +43,14 @@ curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot{$token}/sendMessage"
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "chat_id={$chat_id}&parse_mode=html&text={$message}");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Отключить проверку сертификата
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // Отключить проверку имени хоста
 
 $result = curl_exec($ch);
+if ($result === false) {
+    $error = curl_error($ch);
+}
 curl_close($ch);
 
 header('Content-Type: application/json');
-echo json_encode(['result' => !($result === false)]);
-
+echo json_encode(['result' => $result !== false, 'error' => $error ?? null]);

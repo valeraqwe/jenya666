@@ -1,14 +1,11 @@
-// Глобальная переменная для корзины
 let cart;
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Инициализация cart
     cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
     const cartItemsContainer = document.querySelector(".cart-items");
     const cartTotal = document.querySelector("#cart-total");
 
-    // Обновление счетчика товаров в корзине
     function updateCartCounter() {
         let totalItems = 0;
         cart.forEach(product => {
@@ -20,19 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Обновление общей стоимости товаров в корзине
     function updateTotalPrice() {
         let totalPrice = 0;
         cart.forEach(product => {
-            const productPrice = parseFloat(product.price.replace("₴", ""));
-            if (!isNaN(productPrice)) {
-                totalPrice += productPrice * product.quantity;
-            }
+            totalPrice += product.price * product.quantity;
         });
         cartTotal.innerText = "₴" + totalPrice.toFixed(2);
     }
-
-    // Обновление списка товаров в корзине
 
     function updateCart() {
         cartItemsContainer.innerHTML = "";
@@ -52,17 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const productRow = document.createElement("div");
                 productRow.className = "cart-item";
                 productRow.innerHTML = `
-                <div class="cart-item-detail" data-label="Product"><img src="${product.image}" alt="${product.name}" width="50"></div>
-                <div class="cart-item-detail" data-label="Name">${product.name}</div>
-                <div class="cart-item-detail" data-label="Price">₴${product.price}</div>
-                <div class="cart-item-detail" data-label="Quantity">
-                    <div class="quantity-wrapper">
-                        <button class="quantity-btn decrease-quantity" data-index="${index}">-</button>
-                        <span class="quantity-number">${product.quantity}</span>
-                        <button class="quantity-btn increase-quantity" data-index="${index}">+</button>
+                    <div class="cart-item-detail" data-label="Product"><img src="${product.image}" alt="${product.name}" width="50"></div>
+                    <div class="cart-item-detail" data-label="Size">${product.size}</div>
+                    <div class="cart-item-detail" data-label="Price">₴${product.price}</div>
+                    <div class="cart-item-detail" data-label="Quantity">
+                        <div class="quantity-wrapper">
+                            <button class="quantity-btn decrease-quantity" data-index="${index}">-</button>
+                            <span class="quantity-number">${product.quantity}</span>
+                            <button class="quantity-btn increase-quantity" data-index="${index}">+</button>
+                        </div>
                     </div>
-                </div>
-                <div class="cart-item-detail" data-label="Remove"><button class="remove-from-cart-btn" data-index="${index}">🗑️</button></div>`;
+                    <div class="cart-item-detail" data-label="Remove"><button class="remove-from-cart-btn" data-index="${index}">🗑️</button></div>
+                `;
                 cartItemsContainer.appendChild(productRow);
             });
 
@@ -88,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCart();
     });
-
     function showPopup() {
         const popupElement = document.getElementById("thankYouPopup");
         if (popupElement) {
@@ -119,34 +110,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("orderForm").addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Собираем данные о товарах
-        let cartInfo = JSON.stringify(cart); // Переводим объект в строку JSON
+        let cartInfo = JSON.stringify(cart);
         document.getElementById("cartData").value = cartInfo;
 
-        // Сохраняем в скрытое поле
-        document.getElementById("cartData").value = cartInfo;
-
-        // Создаем объект FormData
         const formData = new FormData(document.getElementById("orderForm"));
 
-        // AJAX-запрос на сервер
         fetch('process_order.php', {
             method: 'POST',
             body: formData,
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Server response:', data);
                 if (data.result === true) {
                     clearCart();
                     showPopup();
-                    document.getElementById("orderForm").reset();  // Очистка формы
+                    document.getElementById("orderForm").reset();
                 } else {
                     alert('Что-то пошло не так, пожалуйста, попробуйте ещё раз.');
                 }
             })
             .catch((error) => console.error('Fetch error:', error));
     });
-    // Этот код добавляется сразу после вашего текущего обработчика события отправки orderForm
-
 });
