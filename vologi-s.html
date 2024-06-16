@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вологі серветки</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐼</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.PNG" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="kupui-online.html">Купуй онлайн - це вигідно!</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                    <li><a href="contact.html">UA</a></li>
+                    <li><a href="contact.html">RU</a></li>
+                </ul>
+            </nav>
+
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
+            <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-1">
+                <div class="contact-icons">
+                    <a href="https://t.me/zavod_panda">
+                        <img src="images/telegram326.png" alt="Telegram" width="28" height="28">
+                    </a>
+                    <a href="https://www.instagram.com/pandazavod.com.ua?igsh=MWY0YWhwamJxcmwxcA==">
+                        <img src="images/instagram.png" alt="Instagram" width="28" height="28">
+                    </a>
+                    <a href="https://www.facebook.com/share/p/cQhEmpFBU9T4pYVk/">
+                        <img src="images/facebook.png" alt="Facebook" width="28" height="28">
+                    </a>
+                    <a href="https://invite.viber.com/?g2=AQAJjniR%2B%2FRwD1LzifHBktsEFSgbqNolebU2zjSMWmufyh7voQ3n81Wi%2Bn9eTD46">
+                        <img src="images/viber.png" alt="Viber" width="28" height="28">
+                    </a>
+                    <a href="https://www.tiktok.com/@yourtiktokaccount">
+                        <img src="images/tik-tok.png" alt="TikTok" width="28" height="28">
+                    </a>
+                </div>
+                <a href="tel:+380637848984" class="phone-number">+380 66 250 4256</a>
+                <a href="contact.html#quickOrderForm" class="btn">Замовити зворотній <br>   дзвінок</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="images/zavod.JPG" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="images/zavod_panda.JPG" style="width:100%">
+    </div>
+</div>
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+</div>
+<!------------------ featured categories --------------->
+<!-------------- Our Featured Products -------------->
+
+
+<div class="small-container">
+    <div class="row">
+        <div class="col-1">
+            <a href="index.html" class="btn-container1">
+                <div class="btn">Туалетний <br>папір</div>
+            </a>
+            <a href="paperovi-r.html" class="btn-container2">
+                <div class="btn">Паперові <br>рушники</div>
+            </a>
+            <a href="vologi-s.html" class="btn-container3">
+                <div class="btn">Вологі <br>серветки</div>
+            </a>
+            <a href="paperovi-s.html" class="btn-container4">
+                <div class="btn">Паперові <br>серветки</div>
+            </a>
+        </div>
+    </div>
+
+    <h1 class="title">Вологі серветки</h1>
+    <div class="row">
+        <div class="col-4" id="product-1">
+            <a href="#">
+                <img src="images/nemovl.jpg">
+                <h4>Сніжна панда в/серв дНемовл Цілющі трави 100шт</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 12 пачок)<br>
+                    до 3999грн <br>
+                    ЦІНА: 1248грн 1шт/104 грн <br>
+                    понад 3999грн <br>
+                    ЦІНА: 1164грн 1шт/97 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>399грн - 1 мішок</option>
+                    <option>700грн - 6 шт</option>
+                    <option>650грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="1">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-1">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-2">
+            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+                <img src="images/romashka.jpg">
+                <h4>Сніжна панда в/серв дНемовл Ромашка 72шт</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 24 пачки)<br>
+                    до 3999грн <br>
+                    ЦІНА: 1752грн 1шт/73 грн <br>
+                    понад 3999грн <br>
+                    ЦІНА: 1632грн 1шт/68 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>299грн - 1 мішок</option>
+                    <option>275грн - 6шт</option>
+                    <option>250грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="2">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-2">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-3">
+            <a href="product-details11.html">  <!-- Добавлен тег <a> -->
+                <img src="images/aloe-vera.jpg">
+                <h4>Сніжна панда в/серв дНемовл Алое б/аромат 72шт  </h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 24 пачки)<br>
+                    до 3999грн <br>
+                    ЦІНА: 1752грн 1шт/73 грн <br>
+                    понад 3999грн <br>
+                    ЦІНА: 1632грн 1шт/68 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>350грн - 1шт</option>
+                    <option>340грн - 6шт</option>
+                    <option>320грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="3">Додати в кошик</button>
+            </div>
+
+            <div class="popup-message" id="popup-message-3">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-4">
+            <a href="product-details12.html">  <!-- Добавлен тег <a> -->
+                <img src="images/nemovlya-romashka.jpg">
+                <h4>Сніжна панда в/серв дНемовл Ромашка 64шт</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 21 пачка)<br>
+                    до 3999грн <br>
+                    ЦІНА: 1260грн 1шт/60 грн <br>
+                    понад 3999грн <br>
+                    ЦІНА: 1155грн 1шт/55 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>350грн - 1шт</option>
+                    <option>340грн - 6шт</option>
+                    <option>320грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="4">Додати в кошик</button>
+            </div>
+
+            <div class="popup-message" id="popup-message-4">
+                Товар додано до кошика!
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-4" id="product-5">
+            <a href="#">
+                <img src="images/nemovl-aloe-vera.jpg">
+                <h4>Сніжна панда в/серв дНемовл Алое БезАро 64шт</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 21 пачка)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1260 грн 1 шт/60 грн<br>
+                    понад 3999 грн<br>
+                    ЦІНА: 1155 грн 1 шт/55 грн</p>
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>399грн - 1 мішок</option>
+                    <option>700грн - 6 шт</option>
+                    <option>650грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="5">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-5">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-6">
+            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+                <img src="images/vitamini.jpg">
+                <h4>Сніжна панда 60шт ESSENTIAL CLEAN Вітаміни</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 21 пачка)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1260 грн 1 шт/60 грн<br>
+                    понад 3999 грн<br>
+                    ЦІНА: 1155 грн 1 шт/55 грн</p>
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>299грн - 1 мішок</option>
+                    <option>275грн - 6шт</option>
+                    <option>250грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="6">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-6">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-7">
+            <a href="product-details11.html">  <!-- Добавлен тег <a> -->
+                <img src="images/clean-romashka.jpg">
+                <h4>Сніжна панда 60шт ESSENTIAL CLEAN Ромашка  </h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 21 пачка)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1260 грн 1 шт/60 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1155 грн 1 шт/55 грн</p>
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>350грн - 1шт</option>
+                    <option>340грн - 6шт</option>
+                    <option>320грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="7">Додати в кошик</button>
+            </div>
+
+            <div class="popup-message" id="popup-message-7">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4" id="product-8">
+            <a href="#">
+                <img src="images/sakura.jpg">
+                <h4>Сніжна панда 15шт Сакура Проти бактерій</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 48 пачок)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 648 грн 1 шт/13 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 600 грн 1 шт/12 грн 50 коп</p>
+
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>399грн - 1 мішок</option>
+                    <option>700грн - 6 шт</option>
+                    <option>650грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="8">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-8">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-9">
+            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+                <img src="images/orchideya.jpg">
+                <h4>Сніжна панда 15шт Орхідея Освіжаючі</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 48 пачок)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 648 грн 1 шт/13 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 600 грн 1 шт/12 грн 50 коп</p>
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>299грн - 1 мішок</option>
+                    <option>275грн - 6шт</option>
+                    <option>250грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="9">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-9">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-10">
+            <a href="product-details11.html">  <!-- Добавлен тег <a> -->
+                <img src="images/laym.jpg">
+                <h4>Сніжна панда 15шт Лайм Проти бактерій</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 48 пачок)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 648 грн 1 шт/13 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 600 грн 1 шт/12 грн 50 коп</p>
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>350грн - 1шт</option>
+                    <option>340грн - 6шт</option>
+                    <option>320грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="10">Додати в кошик</button>
+            </div>
+
+            <div class="popup-message" id="popup-message-10">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-11">
+            <a href="product-details12.html">  <!-- Добавлен тег <a> -->
+                <img src="images/konvaliya.jpg">
+                <h4>Сніжна панда 15шт Конвалія</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 48 пачок)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 648 грн 1 шт/13 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 600 грн 1 шт/12 грн 50 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>350грн - 1шт</option>
+                    <option>340грн - 6шт</option>
+                    <option>320грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="11">Додати в кошик</button>
+            </div>
+
+            <div class="popup-message" id="popup-message-11">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4" id="product-12">
+            <a href="#">
+                <img src="images/kids-romashka.jpg">
+                <h4>Сніжна панда 15шт KIDS Ромашка</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 48 пачок)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 648 грн 1 шт/13 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 600 грн 1 шт/12 грн 50 коп</p>
+
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>399грн - 1 мішок</option>
+                    <option>700грн - 6 шт</option>
+                    <option>650грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="12">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-12">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-13">
+            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+                <img src="images/kids-antimikrob.jpg">
+                <h4>Сніжна панда 15шт KIDS Антимікробні</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>(1ящик 48 пачок)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 648 грн 1 шт/13 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 600 грн 1 шт/12 грн 50 коп</p>
+
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>299грн - 1 мішок</option>
+                    <option>275грн - 6шт</option>
+                    <option>250грн - 12шт</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="13">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-13">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------Brands--------------->
+<div class="brands">
+    <div class="small-container">
+        <h2 class="title">Наші бренди</h2>
+        <div class="row">
+            <div class="col-5">
+                <img src="images/logo.PNG">
+            </div>
+        </div>
+    </div>
+</div>
+<!----------Footer--------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col2">
+                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+            </div>
+        </div>
+        <div class="footer-col3">
+            <p class="phone"><a href="tel:+380662504256">+380 66 250 4256</a></p>
+        </div>
+        <hr>
+        <p class="copyright">2024 - Всі права захищені.</p>
+    </div>
+</div>
+
+
+<!-------------js for toggle menu-------------->
+
+<script>
+
+    let MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+
+</script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        addToCartButtons.forEach((btn) => {
+            btn.addEventListener('click', function () {
+                const productId = this.getAttribute('data-product-id');
+                const popup = document.getElementById(`popup-message-${productId}`);
+                popup.style.opacity = '1';
+                setTimeout(() => {
+                    popup.style.opacity = '0';
+                }, 1500);
+                // Ваш код для добавления товара в корзину
+            });
+        });
+    });
+
+</script>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 4500); // Change image every 4.5 seconds
+    }
+</script>
+</body>
+</html>
+

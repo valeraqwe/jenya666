@@ -1,6 +1,7 @@
 <?php
-$token = "6449904505:AAGb70C0Cx2h9q7dIAFZgFzrNyQSQq9hoZY";
-$chat_id = "-808357395";
+$token = "7321335943:AAFH2vzjL6_sAfofa-p7-G5Frduhs3jBCfU";
+$chat_id = "-4238094603";
+
 
 $customer_name = $_POST['customer_name'];
 $customer_phone = $_POST['customer_phone'];
@@ -22,6 +23,8 @@ curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot{$token}/sendMessage"
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, "chat_id={$chat_id}&parse_mode=html&text={$message}");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Отключить проверку сертификата
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // Отключить проверку имени хоста
 
 $result = curl_exec($ch);
 curl_close($ch);

@@ -1,6 +1,7 @@
 <?php
-$token = "YOUR_BOT_TOKEN";
-$chat_id = "YOUR_CHAT_ID";
+$token = "7321335943:AAFH2vzjL6_sAfofa-p7-G5Frduhs3jBCfU";
+$chat_id = "-4238094603";
+
 
 $customer_name = $_POST['customer_name'];
 $customer_phone = $_POST['customer_phone'];

@@ -121,7 +121,7 @@ nav ul li a:hover::after {
     background: #624e93;
     color: #fff;
     padding: 8px 30px;
-    margin: 30px 0;
+    margin: 10px 0;
     border-radius: 30px;
     transition: background 0.5s;
 
@@ -152,6 +152,7 @@ nav ul li a:hover::after {
     justify-content: center; /* Центрируем по горизонтали */
     align-items: center; /* Центрируем по вертикали */
     padding-top: 10px;
+    margin-bottom: 40px;
 }
 
 .col-3 {
@@ -954,6 +955,7 @@ button[type=submit]:hover {
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
+    margin-top: 100px;
 }
 
 .cart-items {
@@ -1107,6 +1109,14 @@ button[type=submit]:hover {
     padding: 30px 2px;
 }
 
+/* Стиль для экранов ноутбуков и планшетов */
+@media screen and (min-width: 768px) {
+    .about-col {
+        margin-left: 200px;
+    }
+}
+
+
 .about-col img {
     width: 100%;
 }
@@ -1174,7 +1184,7 @@ button[type=submit]:hover {
 
 .contact-col div .fa {
     font-size: 28px;
-    color: #f44336;
+    color: #624e93;
     margin: 10px 30px 10px 10px;
 }
 
