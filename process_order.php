@@ -67,4 +67,4 @@ curl_close($ch);
 
 header('Content-Type: application/json');
 echo json_encode(['result' => $result !== false, 'error' => $error ?? null]);
-?>
+
