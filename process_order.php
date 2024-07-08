@@ -1,6 +1,6 @@
 <?php
-$token = "";
-$chat_id = "";
+$token = "7321335943:AAFH2vzjL6_sAfofa-p7-G5Frduhs3jBCfU";
+$chat_id = "-4250093750";
 
 $customer_name = $_POST['customer_name'];
 $customer_phone = $_POST['customer_phone'];
@@ -67,4 +67,4 @@ curl_close($ch);
 
 header('Content-Type: application/json');
 echo json_encode(['result' => $result !== false, 'error' => $error ?? null]);
-
+?>
