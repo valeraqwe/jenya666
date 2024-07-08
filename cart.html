@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐼</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -56,13 +56,39 @@
                 <input type="text" name="customer_name" placeholder="ПІБ" required>
             </div>
             <div class="form-group">
-                <input type="text" name="customer_phone" placeholder="Телефон" required>
+                <input type="text" name="customer_phone" placeholder="Телефон" required pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
             <div class="form-group">
                 <input type="text" name="customer_city" placeholder="Місто">
             </div>
             <div class="form-group">
-                <input type="text" name="customer_region" placeholder="Область">
+                <select id="customer_region" name="customer_region" required>
+                    <option value="">Виберіть область</option>
+                    <option value="Вінницька область">Вінницька область</option>
+                    <option value="Волинська область">Волинська область</option>
+                    <option value="Дніпропетровська область">Дніпропетровська область</option>
+                    <option value="Донецька область">Донецька область</option>
+                    <option value="Житомирська область">Житомирська область</option>
+                    <option value="Закарпатська область">Закарпатська область</option>
+                    <option value="Запорізька область">Запорізька область</option>
+                    <option value="Івано-Франківська область">Івано-Франківська область</option>
+                    <option value="Київська область">Київська область</option>
+                    <option value="Кіровоградська область">Кіровоградська область</option>
+                    <option value="Луганська область">Луганська область</option>
+                    <option value="Львівська область">Львівська область</option>
+                    <option value="Миколаївська область">Миколаївська область</option>
+                    <option value="Одеська область">Одеська область</option>
+                    <option value="Полтавська область">Полтавська область</option>
+                    <option value="Рівненська область">Рівненська область</option>
+                    <option value="Сумська область">Сумська область</option>
+                    <option value="Тернопільська область">Тернопільська область</option>
+                    <option value="Харківська область">Харківська область</option>
+                    <option value="Херсонська область">Херсонська область</option>
+                    <option value="Хмельницька область">Хмельницька область</option>
+                    <option value="Черкаська область">Черкаська область</option>
+                    <option value="Чернівецька область">Чернівецька область</option>
+                    <option value="Чернігівська область">Чернігівська область</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="delivery_method">Спосіб доставки:</label>
@@ -72,7 +98,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" name="post_office" placeholder="Номер відділення">
+                <input type="number" name="post_office" placeholder="Номер відділення" min="1" max="10000" required>
             </div>
             <div class="form-group">
                 <textarea name="order_comment" placeholder="Коментар до замовлення"></textarea>

@@ -22,11 +22,11 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="kupui-online.html">Купуй онлайн - це вигідно!</a></li>
-                    <li><a href="about.html">Про нас</a></li>
-                    <li><a href="contact.html">Контакти</a></li>
-                    <li><a href="contact.html">UA</a></li>
-                    <li><a href="contact.html">RU</a></li>
+                    <li><a href="kupui-online.html" id="online-shopping">Купуй онлайн - це вигідно!</a></li>
+                    <li><a href="about.html" id="about-us">Про нас</a></li>
+                    <li><a href="contact.html" id="contacts">Контакти</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ua')">UA</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ru')">RU</a></li>
                 </ul>
             </nav>
             <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
@@ -35,52 +35,48 @@
         </div>
         <div class="row">
             <div class="col-2">
-                <h1>Купуй онлайн!</h1>
-                <p>Нема часу їхати на ринок?
-                    Купуй ОНЛАЙН, без посередників, офіціал! Даємо три ціни.
-                    Перша до 3999грн, друга понад 3999грн, третя від 999$ за курсом НБУ</p>
+                <h1 id="main-heading">Купуй онлайн!</h1>
+                <p class="description" id="main-description">Нема часу їхати на ринок? Купуй ОНЛАЙН, без посередників, офіціал! Даємо три ціни. Перша до 3999грн, друга понад 3999грн, третя від 999$ за курсом НБУ.</p>
+            </div>
+            <div class="col-2">
+                <img src="images/panda_kupi.png">
             </div>
         </div>
     </div>
 </div>
 
 <!-- about us content -->
-<section class="about-us">
-    <div class="row">
-        <div class="about-col">
-            <h1>Ми - успішна українська компанія.<br> Чому вигідно купити в нашому магазині?</h1>
-            <br>
-            <ol>
-                <li>ЗРУЧНО - відправка замовлення в день замовлення після повної оплати на ФОП</li>
-                <li>ЕКОНОМИМО ЧАС - не потрібно ходити по ринку, складах. Ми самі можемо приїхати :)</li>
-                <li>ДОСТАВКА - Нова Пошта, Укрпошта, логістичні перевезення, ваші наші варіанти і т.д. Доставимо на ваш склад, ринок, магазин або поріг будинку.</li>
-                <li>ЕКСКЛЮЗИВНІ ПРОПОЗИЦІЇ - Не вся продукція є в офлайн-магазинах! Величезний вибір продукції у нашому віртуальному магазині.</li>
-                <li>БЕЗ ПОСЕРЕДНИКІВ - Не переплатив, значить ЗАРОБИВ</li>
-            </ol>
+<section class="about-us1">
+    <div class="container">
+        <div class="row">
+            <div class="about-col">
+                <h1 id="about-heading">Ми - успішна українська компанія. Чому вигідно купити в нашому магазині?</h1>
+                <br>
+                <div class="benefit" id="benefit-1">
+                    <strong>Зручно</strong> - відправка замовлення в день замовлення після повної оплати на ФОП.
+                </div>
+                <div class="benefit" id="benefit-2">
+                    <strong>Економимо час</strong> - не потрібно ходити по ринку та складах. Ми самі можемо приїхати :)
+                </div>
+                <div class="benefit" id="benefit-3">
+                    <strong>Доставка</strong> - Нова Пошта, Укрпошта, логістичні перевезення та інші варіанти. Доставимо на ваш склад, ринок, магазин або поріг будинку.
+                </div>
+                <div class="benefit" id="benefit-4">
+                    <strong>Ексклюзивні пропозиції</strong> - не вся продукція є в офлайн-магазинах! Величезний вибір продукції у нашому віртуальному магазині.
+                </div>
+                <div class="benefit" id="benefit-5">
+                    <strong>Без посередників</strong> - не переплатив, значить заробив.
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
-<!------------------ featured categories --------------->
-
-
-<!-------------- Our Featured Products -------------->
-
-
-
-<!----------offer--------------->
-
-
-<!----------testimonial--------------->
-
-<!----------Brands--------------->
-<!----------Footer--------------->
 
 <div class="footer">
     <div class="container">
         <div class="row">
             <div class="footer-col2">
-                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+                <p id="footer-goal">Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
             </div>
         </div>
         <div class="footer-col3">
@@ -91,24 +87,63 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/basket.js/0.5.2/basket.full.min.js"></script>
-
-
-<!-------------js for toggle menu-------------->
-
 <script>
-
     let MenuItems = document.getElementById("MenuItems");
-
     MenuItems.style.maxHeight = "0px";
 
     function menutoggle() {
         if (MenuItems.style.maxHeight == "0px") {
             MenuItems.style.maxHeight = "200px";
         } else {
-            MenuItems.style.maxHeight = "0px"
+            MenuItems.style.maxHeight = "0px";
         }
     }
 
+    function changeLanguage(language) {
+        const translations = {
+            ua: {
+                onlineShopping: "Купуй онлайн - це вигідно!",
+                aboutUs: "Про нас",
+                contacts: "Контакти",
+                mainHeading: "Купуй онлайн!",
+                mainDescription: "Нема часу їхати на ринок? Купуй ОНЛАЙН, без посередників, офіціал! Даємо три ціни. Перша до 3999грн, друга понад 3999грн, третя від 999$ за курсом НБУ.",
+                aboutHeading: "Ми - успішна українська компанія. Чому вигідно купити в нашому магазині?",
+                benefit1: "<strong>Зручно</strong> - відправка замовлення в день замовлення після повної оплати на ФОП.",
+                benefit2: "<strong>Економимо час</strong> - не потрібно ходити по ринку та складах. Ми самі можемо приїхати :)",
+                benefit3: "<strong>Доставка</strong> - Нова Пошта, Укрпошта, логістичні перевезення та інші варіанти. Доставимо на ваш склад, ринок, магазин або поріг будинку.",
+                benefit4: "<strong>Ексклюзивні пропозиції</strong> - не вся продукція є в офлайн-магазинах! Величезний вибір продукції у нашому віртуальному магазині.",
+                benefit5: "<strong>Без посередників</strong> - не переплатив, значить заробив.",
+                footerGoal: "Наша мета – дати задоволення та користь від наших товарів доступними для багатьох."
+            },
+            ru: {
+                onlineShopping: "Покупай онлайн - это выгодно!",
+                aboutUs: "О нас",
+                contacts: "Контакты",
+                mainHeading: "Покупай онлайн!",
+                mainDescription: "Нет времени ехать на рынок? Покупай ОНЛАЙН, без посредников, официал! Даем три цены. Первая до 3999грн, вторая более 3999грн, третья от 999$ по курсу НБУ.",
+                aboutHeading: "Мы - успешная украинская компания. Почему выгодно купить в нашем магазине?",
+                benefit1: "<strong>Удобно</strong> - отправка заказа в день заказа после полной оплаты на ФЛП.",
+                benefit2: "<strong>Экономим время</strong> - не нужно ходить по рынку и складам. Мы сами можем приехать :)",
+                benefit3: "<strong>Доставка</strong> - Новая Почта, Укрпочта, логистические перевозки и другие варианты. Доставим на ваш склад, рынок, магазин или порог дома.",
+                benefit4: "<strong>Эксклюзивные предложения</strong> - не вся продукция есть в офлайн-магазинах! Огромный выбор продукции в нашем виртуальном магазине.",
+                benefit5: "<strong>Без посредников</strong> - не переплатил, значит заработал.",
+                footerGoal: "Наша цель – предоставить удовольствие и пользу от наших товаров доступными для многих."
+            }
+        };
+
+        document.getElementById('online-shopping').innerHTML = translations[language].onlineShopping;
+        document.getElementById('about-us').innerHTML = translations[language].aboutUs;
+        document.getElementById('contacts').innerHTML = translations[language].contacts;
+        document.getElementById('main-heading').innerHTML = translations[language].mainHeading;
+        document.getElementById('main-description').innerHTML = translations[language].mainDescription;
+        document.getElementById('about-heading').innerHTML = translations[language].aboutHeading;
+        document.getElementById('benefit-1').innerHTML = translations[language].benefit1;
+        document.getElementById('benefit-2').innerHTML = translations[language].benefit2;
+        document.getElementById('benefit-3').innerHTML = translations[language].benefit3;
+        document.getElementById('benefit-4').innerHTML = translations[language].benefit4;
+        document.getElementById('benefit-5').innerHTML = translations[language].benefit5;
+        document.getElementById('footer-goal').innerHTML = translations[language].footerGoal;
+    }
 </script>
 <script src="js/main.js"></script>
 <script>
@@ -126,8 +161,6 @@
             });
         });
     });
-
 </script>
 </body>
 </html>
-

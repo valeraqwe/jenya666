@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сніжна Панда | Завод</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐼</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.PNG" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="kupui-online.html" id="online-shopping">Купуй онлайн - це вигідно!</a></li>
+                    <li><a href="about.html" id="about-us">Про нас</a></li>
+                    <li><a href="contact.html" id="contacts">Контакти</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ua')">UA</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ru')">RU</a></li>
+                </ul>
+            </nav>
+
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
+            <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+        </div>
+    </div>
+</div>
+
+<!------------------ featured categories --------------->
+<!-------------- Our Featured Products -------------->
+
+
+<div class="small-container">
+
+    <!--products-->
+    <h1 class="title" id="superior-series">Серія SUPERIOR</h1>
+    <div class="row">
+        <div class="col-4" id="product-46">
+            <a href="#">
+                <img src="images/superior4.jpg">
+                <h4>Extra Care 4шт 4 слоя <br>Superior</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 14 пачок 56 рулонів)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1540 грн 1 шт/27 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1428 грн 1 шт/25 грн 50 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1540грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="46">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-46">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-45">
+            <a href="#">
+                <img src="images/superiour4.jpg">
+                <h4>Extra Care 8шт 4 слоя <br>Superior</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 6 пачок 48 рулонів)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1278 грн 1 шт/26 грн 62 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1194 грн 1 шт/24 грн 87 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1278грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="45">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-45">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-44">
+            <a href="#">
+                <img src="images/superior32.jpg">
+                <h4>Extra Care 32шт 4 слоя Superior</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 2 пачки 64 рулони)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1556 грн 1 шт/24 грн 31 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1446 грн 1 шт/22 грн 59 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1556грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="44">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-44">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------js for toggle menu-------------->
+
+<script>
+    function changeLanguage(language) {
+        const translations = {
+            ua: {
+                onlineShopping: "Купуй онлайн - це вигідно!",
+                aboutUs: "Про нас",
+                contacts: "Контакти",
+                orderCall: "Замовити зворотній <br> дзвінок",
+                toiletPaper: "Туалетний <br>папір",
+                paperTowels: "Паперові <br>рушники",
+                wetWipes: "Вологі <br>серветки",
+                paperNapkins: "Паперові <br>серветки",
+                economyTwoPly: "Двошарова економка (некондиція)",
+                snowPanda: "Сніжна панда (некондиція)",
+                luxury: "Лакшері (некондиція)",
+                aromaSeries: "Серія AROMA",
+                classicSeries: "Серія CLASSIC",
+                tenderTouch1: "Ніжний Дотик",
+                tenderTouch2: "Ніжний Дотик",
+                aromaSeries2: "Серія AROMA",
+                sensitiveSeries: "Серія SENSITIVE",
+                superiorSeries: "Серія SUPERIOR",
+                optimaSeries: "Серія Optima",
+                bambooSeries: "Серія Bamboo",
+                ultraCareSeries: "Серія Ultra Care",
+                footerGoal: "Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.",
+                product1Name: "Двошарова економка (некондиція) 2 сорт 2-х шарова",
+                product1Price: "ціна 299грн 1 мішок <br>1 рулон 4грн 67коп",
+                product1Select: "299грн - 1 мішок",
+                product2Name: "Двошарова економка (некондиція) 1 сорт 2-х шарова",
+                product2Price: "ціна 399 грн 1мішок <br> 1 рулон 6 грн 23 коп",
+                product2Select: "399грн - 1 мішок",
+                addToCart: "Додати в кошик",
+                productAdded: "Товар додано до кошика!",
+                product3Name: "Сніжна Панда (некондиція) 2 сорт 2-х шарова",
+                product3Price: "ціна 549грн 1 мішок <br>1 рулон 8 грн 57 коп",
+                product3Select: "549грн - 1 мішок",
+                product4Name: "Сніжна Панда (некондиція) 1 сорт 2-х шарова",
+                product4Price: "ціна 599грн 1 мішок <br>1 рулон 9грн 35 коп",
+                product4Select: "599грн - 1 мішок",
+                product5Name: "Лакшері (некондиція) 2 сорт 2-х шарова",
+                product5Price: "ціна 599грн - 1 рулон 9грн 35 коп",
+                product5Select: "599грн - 1 мішок",
+                product6Name: "Лакшері (некондиція) 1 сорт 2-х шарова",
+                product6Price: "ціна 699грн - 1 рулон 10грн 92 коп",
+                product6Select: "699грн - 1 мішок",
+                product7Name: "Ніжний дотик 2 шари (БІЛИЙ) 32шт",
+                product7Price: "(1 ящик 2 пачки 64 рулони)<br> до 3999 грн<br> ЦІНА: 716 грн 1 шт/11 грн 18 коп<br> більше 3999 грн<br> ЦІНА: 664 грн 1 шт/10 грн 37 коп",
+                product7Select: "716грн - 1 мішок",
+                product8Name: "Ніжний дотик 2 шари (БІЛИЙ) 16шт",
+                product8Price: "(1 ящик 4 пачки 64 рулони)<br> до 3999 грн<br> ЦІНА: 752 грн 1 шт/11 грн 75 коп<br> більше 3999 грн<br> ЦІНА: 700 грн 1 шт/10 грн 93 коп",
+                product8Select: "752грн - 1 мішок",
+                product9Name: "Ніжний дотик 4+2 шт <br>2 шари",
+                product9Price: "(1 ящик 16 пачок 96 рулонів)<br> до 3999 грн<br> ЦІНА: 1024 грн 1 шт/10 грн 66 коп<br> більше 3999 грн<br> ЦІНА: 944 грн 1 шт/9 грн 83 коп",
+                product9Select: "1024грн - 1 мішок",
+                product10Name: "Ніжний дотик (БІЛИЙ) 2 шари 1шт",
+                product10Price: "(1 ящик 16 шт)<br> до 3999 грн<br> ЦІНА: 224 грн 1 шт/14 грн<br> більше 3999 грн<br> ЦІНА: 208 грн 1 шт/13 грн",
+                product10Select: "224грн - 1 мішок",
+                product11Name: "Ніжний дотик 4+2 шт 2 шари Жовтий",
+                product11Price: "(1 ящик 16 пачок 96 рулонів)<br> до 3999 грн<br> ЦІНА: 1024 грн 1 шт/10 грн 66 коп<br> більше 3999 грн<br> ЦІНА: 944 грн 1 шт/9 грн 83 коп",
+                product11Select: "1024грн - 1 мішок",
+                product12Name: "Ніжний дотик 4шт 2 шари АРОМА",
+                product12Price: "(1 ящик 16 пачок 64 рулони)<br> до 3999 грн<br> ЦІНА: 752 грн 1 шт/11 грн 75 коп<br> більше 3999 грн<br> ЦІНА: 688 грн 1 шт/10 грн 75 коп",
+                product12Select: "752грн - 1 мішок",
+                aromaSeries: "Серія AROMA",
+                product13Name: "Сніжна панда 4шт 2слоя AROMA",
+                product13Price: "(1 ящик 16 пачок 64 рулони)<br> до 3999 грн<br> ЦІНА: 1008 грн 1 шт/15 грн 75 коп<br> більше 3999 грн<br> ЦІНА: 928 грн 1 шт/14 грн 50 коп",
+                product13Select: "1008грн - 1 мішок",
+                product14Name: "Сніжна панда 8шт 2слоя AROMA",
+                product14Price: "(1 ящик 8 пачок 64 рулони)<br> до 3999 грн<br> ЦІНА: 968 грн 1 шт/15 грн 12 коп<br> більше 3999 грн<br> ЦІНА: 896 грн 1 шт/14 грн",
+                product14Select: "968грн - 1 мішок",
+                product15Name: "Сніжна панда 16 шт 2 шари AROMA",
+                product15Price: "(1 ящик 4 пачки 64 рулони)<br> до 3999 грн<br> ЦІНА: 932 грн 1 шт/14 грн 56 коп<br> більше 3999 грн<br> ЦІНА: 868 грн 1 шт/13 грн 56 коп",
+                product15Select: "932грн - 1 мішок",
+                product16Name: "Сніжна панда 4шт 2слоя CLASSIK",
+                product16Price: "(1 ящик 16 пачок 64 рулони) <br> до 3999 грн <br> ЦІНА: 1008 грн 1 шт/15 грн 75 коп <br> більше 3999 грн <br> ЦІНА: 928 грн 1 шт/14 грн 50 коп",
+                product16Select: "1008 грн - 1 мішок",
+                product17Name: "Сніжна панда 8шт 2слоя CLASSIK",
+                product17Price: "(1 ящик 8 пачок 64 рулони) <br> до 3999 грн <br> ЦІНА: 968 грн 1 шт/15 грн 12 коп <br> більше 3999 грн <br> ЦІНА: 896 грн 1 шт/14 грн",
+                product17Select: "968грн - 1 мішок",
+                product18Name: "Сніжна панда 16шт 2слоя CLASSIK",
+                product18Price: "(1 ящик 4 пачки 64 рулони) <br> до 3999 грн <br> ЦІНА: 932 грн 1 шт/14 грн 56 коп <br> більше 3999 грн <br> ЦІНА: 868 грн 1 шт/13 грн 56 коп",
+                product18Select: "932грн - 1 мішок",
+                product19Name: "Сніжна панда 32шт 2слоя CLASSIK",
+                product19Price: "(1 ящик 4 пачки 64 рулони) <br> до 3999 грн <br> ЦІНА: 890 грн 1 шт/13 грн 90 коп <br> більше 3999 грн <br> ЦІНА: 826 грн 1 шт/12 грн 90 коп",
+                product19Select: "890грн - 1 мішок",
+                product20Name: "Сніжна панда 16шт 2слоя OPTIMA",
+                product20Price: "(1 ящик 4 пачки 64 рулона) <br> до 3999 грн <br> ЦІНА: 932 грн 1 шт/14 грн 56 коп <br> більше 3999 грн <br> ЦІНА: 868 грн 1 шт/13 грн 56 коп",
+                product20Select: "932 грн - 1 мішок",
+                product21Name: "Сніжна панда 4шт 2слоя BAMBOO",
+                product21Price: "(1 ящик 16 пачок 64 рулона) <br> до 3999 грн <br> ЦІНА: 1008 грн 1 шт/15 грн 75 коп <br> більше 3999 грн <br> ЦІНА: 928 грн 1 шт/14 грн 50 коп",
+                product21Select: "1008 грн - 1 мішок",
+                product22Name: "Extra Care 4шт 3 слоя Ultra Care",
+                product22Price: "(1 ящик 16 пачок 64 рулона) <br> до 3999 грн <br> ЦІНА: 1344 грн 1 шт/21 грн <br> більше 3999 грн <br> ЦІНА: 1248 грн 1 шт/19 грн 50 коп",
+                product22Select: "1344 грн - 1 мішок",
+
+
+            },
+            ru: {
+                onlineShopping: "Покупай онлайн - это выгодно!",
+                aboutUs: "О нас",
+                contacts: "Контакты",
+                orderCall: "Заказать обратный <br> звонок",
+                toiletPaper: "Туалетная <br>бумага",
+                paperTowels: "Бумажные <br>полотенца",
+                wetWipes: "Влажные <br>салфетки",
+                paperNapkins: "Бумажные <br>салфетки",
+                economyTwoPly: "Двухслойная экономка (некондиция)",
+                snowPanda: "Снежная панда (некондиция)",
+                luxury: "Лакшери (некондиция)",
+                aromaSeries: "Серия AROMA",
+                classicSeries: "Серия CLASSIC",
+                tenderTouch1: "Нежное касание",
+                tenderTouch2: "Нежное касание",
+                aromaSeries2: "Серия AROMA",
+                sensitiveSeries: "Серия SENSITIVE",
+                superiorSeries: "Серия SUPERIOR",
+                optimaSeries: "Серия Optima",
+                bambooSeries: "Серия Bamboo",
+                ultraCareSeries: "Серия Ultra Care",
+                footerGoal: "Наша цель – предоставить удовольствие и пользу от наших товаров доступными для многих.",
+                product1Name: "Двухслойная экономка (некондиция) 2 сорт 2-х слойная",
+                product1Price: "цена 299грн 1 мешок <br>1 рулон 4грн 67коп",
+                product1Select: "299грн - 1 мешок",
+                product2Name: "Двухслойная экономка (некондиция) 1 сорт 2-х слойная",
+                product2Price: "цена 399 грн 1мешок <br> 1 рулон 6 грн 23 коп",
+                product2Select: "399грн - 1 мешок",
+                addToCart: "Добавить в корзину",
+                productAdded: "Товар добавлен в корзину!",
+                product3Name: "Снежная Панда (некондиция) 2 сорт 2-х слойная",
+                product3Price: "цена 549грн 1 мешок <br>1 рулон 8 грн 57 коп",
+                product3Select: "549грн - 1 мешок",
+                product4Name: "Снежная Панда (некондиция) 1 сорт 2-х слойная",
+                product4Price: "цена 599грн 1 мешок <br>1 рулон 9 грн 35 коп",
+                product4Select: "599грн - 1 мешок",
+                product5Name: "Лакшери (некондиция) 2 сорт 2-х слойная",
+                product5Price: "цена 599грн - 1 рулон 9грн 35 коп",
+                product5Select: "599грн - 1 мешок",
+                product6Name: "Лакшери (некондиция) 1 сорт 2-х слойная",
+                product6Price: "цена 699грн - 1 рулон 10грн 92 коп",
+                product6Select: "699грн - 1 мешок",
+                product7Name: "Нежное прикосновение 2 слоя (БЕЛЫЙ) 32шт",
+                product7Price: "(1 ящик 2 пачки 64 рулона)<br> до 3999 грн<br> ЦЕНА: 716 грн 1 шт/11 грн 18 коп<br> больше 3999 грн<br> ЦЕНА: 664 грн 1 шт/10 грн 37 коп",
+                product7Select: "716грн - 1 мешок",
+                product8Name: "Нежное прикосновение 2 слоя (БЕЛЫЙ) 16шт",
+                product8Price: "(1 ящик 4 пачки 64 рулона)<br> до 3999 грн<br> ЦЕНА: 752 грн 1 шт/11 грн 75 коп<br> больше 3999 грн<br> ЦЕНА: 700 грн 1 шт/10 грн 93 коп",
+                product8Select: "752грн - 1 мешок",
+                product9Name: "Нежное прикосновение 4+2 шт <br>2 слоя",
+                product9Price: "(1 ящик 16 пачек 96 рулонов)<br> до 3999 грн<br> ЦЕНА: 1024 грн 1 шт/10 грн 66 коп<br> больше 3999 грн<br> ЦЕНА: 944 грн 1 шт/9 грн 83 коп",
+                product9Select: "1024грн - 1 мешок",
+                product10Name: "Нежное прикосновение (БЕЛЫЙ) 2 слоя 1шт",
+                product10Price: "(1 ящик 16 шт)<br> до 3999 грн<br> ЦЕНА: 224 грн 1 шт/14 грн<br> больше 3999 грн<br> ЦЕНА: 208 грн 1 шт/13 грн",
+                product10Select: "224грн - 1 мешок",
+                product11Name: "Нежное прикосновение 4+2 шт 2 слоя Желтый",
+                product11Price: "(1 ящик 16 пачек 96 рулонов)<br> до 3999 грн<br> ЦЕНА: 1024 грн 1 шт/10 грн 66 коп<br> больше 3999 грн<br> ЦЕНА: 944 грн 1 шт/9 грн 83 коп",
+                product11Select: "1024грн - 1 мешок",
+                product12Name: "Нежное прикосновение 4шт 2 слоя АРОМА",
+                product12Price: "(1 ящик 16 пачек 64 рулона)<br> до 3999 грн<br> ЦЕНА: 752 грн 1 шт/11 грн 75 коп<br> больше 3999 грн<br> ЦЕНА: 688 грн 1 шт/10 грн 75 коп",
+                product12Select: "752грн - 1 мешок",
+                aromaSeries: "Серия AROMA",
+                product13Name: "Снежная панда 4шт 2слоя AROMA",
+                product13Price: "(1 ящик 16 пачек 64 рулона)<br> до 3999 грн<br> ЦЕНА: 1008 грн 1 шт/15 грн 75 коп<br> больше 3999 грн<br> ЦЕНА: 928 грн 1 шт/14 грн 50 коп",
+                product13Select: "1008грн - 1 мешок",
+                product14Name: "Снежная панда 8шт 2слоя AROMA",
+                product14Price: "(1 ящик 8 пачек 64 рулона)<br> до 3999 грн<br> ЦЕНА: 968 грн 1 шт/15 грн 12 коп<br> больше 3999 грн<br> ЦЕНА: 896 грн 1 шт/14 грн",
+                product14Select: "968грн - 1 мешок",
+                product15Name: "Снежная панда 16 шт 2 слоя AROMA",
+                product15Price: "(1 ящик 4 пачки 64 рулона)<br> до 3999 грн<br> ЦЕНА: 932 грн 1 шт/14 грн 56 коп<br> больше 3999 грн<br> ЦЕНА: 868 грн 1 шт/13 грн 56 коп",
+                product15Select: "932грн - 1 мешок",
+                product16Name: "Снежная панда 4шт 2слоя CLASSIK",
+                product16Price: "(1 ящик 16 пачек 64 рулона) <br> до 3999 грн <br> Цена: 1008 грн 1 шт/15 грн 75 коп <br> более 3999 грн <br> Цена: 928 грн 1 шт/14 грн коп",
+                product16Select: "1008 грн – 1 мешок",
+                product17Name: "Снежная панда 8шт 2слоя CLASSIK",
+                product17Price: "(1 ящик 8 пачек 64 рулона) <br> до 3999 грн <br> ЦЕНА: 968 грн 1 шт/15 грн 12 коп. больше 3999 грн <br> ЦЕНА: 896 грн 1 шт/14 грн" ,
+                product17Select: "968грн - 1 мешок",
+                product18Name: "Снежная панда 16шт 2слоя CLASSIK",
+                product18Price: "(1 ящик 4 пачки 64 рулона) <br> до 3999 грн <br> Цена: 932 грн 1 шт/14 грн 56 коп <br> больше 3999 грн <br> Цена: 868 грн 1 шт/13 грн 56 коп",
+                product18Select: "932грн - 1 мешок",
+                product19Name: "Снежная панда 32шт 2слоя CLASSIK",
+                product19Price: "(1 ящик 4 пачки 64 рулона) <br> до 3999 грн <br> Цена: 890 грн 1 шт/13 грн 90 коп <br> больше 3999 грн <br> Цена: 826 грн 1 шт/12 грн коп",
+                product19Select: "890грн - 1 мешок",
+                product20Name: "Снежная панда 16шт 2слоя OPTIMA",
+                product20Price: "(1 ящик 4 пачки 64 рулона) <br> до 3999 грн <br> ЦЕНА: 932 грн 1 шт/14 грн 56 коп <br> больше 3999 грн <br> ЦЕНА: 868 грн 1 шт/13 грн 56 коп",
+                product20Select: "932 грн - 1 мешок",
+                product21Name: "Снежная панда 4шт 2слоя BAMBOO",
+                product21Price: "(1 ящик 16 пачек 64 рулона) <br> до 3999 грн <br> ЦЕНА: 1008 грн 1 шт/15 грн 75 коп <br> свыше 3999 грн <br> ЦЕНА: 928 грн 1 шт/14 грн 50 коп",
+                product21Select: "1008 грн - 1 мешок",
+                product22Name: "Extra Care 4шт 3 слоя Ultra Care",
+                product22Price: "(1 ящик 16 пачек 64 рулона) <br> до 3999 грн <br> ЦЕНА: 1344 грн 1 шт/21 грн <br> больше 3999 грн <br> ЦЕНА: 1248 грн 1 шт/19 грн 50 коп",
+                product22Select: "1344 грн - 1 мешок",
+
+
+            }
+        };
+
+        document.getElementById('online-shopping').innerHTML = translations[language].onlineShopping;
+        document.getElementById('about-us').innerHTML = translations[language].aboutUs;
+        document.getElementById('contacts').innerHTML = translations[language].contacts;
+        document.getElementById('order-call').innerHTML = translations[language].orderCall;
+        document.getElementById('toilet-paper').innerHTML = translations[language].toiletPaper;
+        document.getElementById('paper-towels').innerHTML = translations[language].paperTowels;
+        document.getElementById('wet-wipes').innerHTML = translations[language].wetWipes;
+        document.getElementById('paper-napkins').innerHTML = translations[language].paperNapkins;
+        document.getElementById('economy-two-ply').innerHTML = translations[language].economyTwoPly;
+        document.getElementById('snow-panda').innerHTML = translations[language].snowPanda;
+        document.getElementById('luxury').innerHTML = translations[language].luxury;
+        document.getElementById('aroma-series').innerHTML = translations[language].aromaSeries;
+        document.getElementById('classic-series').innerHTML = translations[language].classicSeries;
+        document.getElementById('tender-touch-1').innerHTML = translations[language].tenderTouch1;
+        document.getElementById('tender-touch-2').innerHTML = translations[language].tenderTouch2;
+        document.getElementById('aroma-series-2').innerHTML = translations[language].aromaSeries2;
+        document.getElementById('sensitive-series').innerHTML = translations[language].sensitiveSeries;
+        document.getElementById('superior-series').innerHTML = translations[language].superiorSeries;
+        document.getElementById('optima-series').innerHTML = translations[language].optimaSeries;
+        document.getElementById('bamboo-series').innerHTML = translations[language].bambooSeries;
+        document.getElementById('ultra-care-series').innerHTML = translations[language].ultraCareSeries;
+        document.getElementById('footer-goal').innerHTML = translations[language].footerGoal;
+
+        // Переводим названия продуктов
+        document.querySelectorAll('.product-name').forEach((element, index) => {
+            element.innerHTML = translations[language][`product${index + 1}Name`];
+        });
+
+        document.querySelectorAll('.product-price').forEach((element, index) => {
+            element.innerHTML = translations[language][`product${index + 1}Price`];
+        });
+
+        document.querySelectorAll('.product-select').forEach((element, index) => {
+            element.options[1].text = translations[language][`product${index + 1}Select`];
+        });
+
+        document.querySelectorAll('.add-to-cart-btn').forEach((element) => {
+            element.innerHTML = translations[language].addToCart;
+        });
+
+        document.querySelectorAll('.popup-message').forEach((element) => {
+            element.innerHTML = translations[language].productAdded;
+        });
+    }
+</script>
+
+</body>
+</html>
+

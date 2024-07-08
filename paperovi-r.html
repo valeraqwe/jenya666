@@ -22,11 +22,11 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="kupui-online.html">Купуй онлайн - це вигідно!</a></li>
-                    <li><a href="about.html">Про нас</a></li>
-                    <li><a href="contact.html">Контакти</a></li>
-                    <li><a href="contact.html">UA</a></li>
-                    <li><a href="contact.html">RU</a></li>
+                    <li><a href="kupui-online.html" id="online-shopping">Купуй онлайн - це вигідно!</a></li>
+                    <li><a href="about.html" id="about-us">Про нас</a></li>
+                    <li><a href="contact.html" id="contacts">Контакти</a></li>
+                    <li><a href="#" onclick="changeLanguage('ua')">UA</a></li>
+                    <li><a href="#" onclick="changeLanguage('ru')">RU</a></li>
                 </ul>
             </nav>
 
@@ -54,25 +54,33 @@
                     </a>
                 </div>
                 <a href="tel:+380637848984" class="phone-number">+380 66 250 4256</a>
-                <a href="contact.html#quickOrderForm" class="btn">Замовити зворотній <br>   дзвінок</a>
+                <a href="contact.html#quickOrderForm" class="btn" id="order-call">Замовити зворотній <br> дзвінок</a>
             </div>
         </div>
-
-
     </div>
 </div>
 <div class="slideshow-container">
     <div class="mySlides fade">
-        <img src="images/zavod.JPG" style="width:100%">
+        <img src="images/dostavka.JPG" style="width:100%">
     </div>
     <div class="mySlides fade">
         <img src="images/zavod_panda.JPG" style="width:100%">
     </div>
+    <div class="mySlides fade">
+        <img src="images/reklama.JPG" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="images/zavod.JPG" style="width:100%">
+    </div>
+    <!-- Стрелочки -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-</div>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
 </div>
 <!------------------ featured categories --------------->
 <!-------------- Our Featured Products -------------->
@@ -81,405 +89,105 @@
 <div class="small-container">
     <div class="row">
         <div class="col-1">
-            <a href="index.html" class="btn-container1">
-                <div class="btn">Туалетний <br>папір</div>
+            <a href="index.html" class="btn-container btn-container1" data-page="index">
+                <div class="btn1" id="toilet-paper">Туалетний <br> папір</div>
             </a>
-            <a href="paperovi-r.html" class="btn-container2">
-                <div class="btn">Паперові <br>рушники</div>
+            <a href="paperovi-r.html" class="btn-container btn-container2" data-page="paperovi-r">
+                <div class="btn1" id="paper-towels">Паперові <br> рушники</div>
             </a>
-            <a href="vologi-s.html" class="btn-container3">
-                <div class="btn">Вологі <br>серветки</div>
+            <a href="vologi-s.html" class="btn-container btn-container3" data-page="vologi-s">
+                <div class="btn1" id="wet-wipes">Вологі <br> серветки</div>
             </a>
-            <a href="paperovi-s.html" class="btn-container4">
-                <div class="btn">Паперові <br>серветки</div>
+            <a href="paperovi-s.html" class="btn-container btn-container4" data-page="paperovi-s">
+                <div class="btn1" id="paper-napkins">Паперові <br> серветки</div>
             </a>
         </div>
     </div>
 
-    <h1 class="title">Паперові рушники</h1>
+
+    <h1 class="title" id="economy-two-ply">Серія Біг Ролл (некондиція)</h1>
     <div class="row">
-        <div class="col-4" id="product-42">
+        <div class="col-4" id="product-67">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/rollnekond.jpg">
+                <h4>Биг Ролл 2сорт 21шт/мешок (НЕКОНДИЦИЯ)</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1 мішок 21 штука)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 599 грн 1 шт/28 грн 52 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 549 грн 1 шт/26 грн 14 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>599грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="67">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-67">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-68">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/rollnekond.jpg">
+                <h4>Биг Ролл 1сорт 21шт/мешок (НЕКОНДИЦИЯ)</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1 мішок 21 штука)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 749 грн 1 шт/35 грн 66 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 649 грн 1 шт/30 грн 90 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>749грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="68">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-68">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-66">
             <a href="#">
-                <img src="images/dotik130.jpg">
-                <h4>Ніжний дотик рушник лист 130 шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+                <img src="images/rollnekond.jpg">
+                <h4>ЛЮКС (НЕКОНДИЦИЯ) 1мешок/18штук</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
                 </div>
-                <p>(1ящик 32 штуки)<br>
+                <p>(1 мішок 18 штук)<br>
                     до 3999 грн<br>
-                    ЦІНА: 1504 грн 1 шт/47 грн<br>
+                    ЦІНА: 999 грн 1 шт/55 грн 50 коп<br>
                     більше 3999 грн<br>
-                    ЦІНА: 1408 грн 1 шт/44 грн</p>
+                    ЦІНА: 949 грн 1 шт/52 грн 72 коп</p>
             </a>
             <div class="select-and-button">
                 <select class="hidden-select">
                     <option value="" disabled selected>Виберіть кількість</option>
-                    <option>399грн - 1 мішок</option>
-                    <option>700грн - 6 шт</option>
-                    <option>650грн - 12шт</option>
+                    <option>999грн - 1 мішок</option>
                 </select>
-                <button class="btn add-to-cart-btn" data-product-id="42">Додати в кошик</button>
+                <button class="btn add-to-cart-btn" data-product-id="66">Додати в кошик</button>
             </div>
-            <div class="popup-message" id="popup-message-42">
+            <div class="popup-message" id="popup-message-66">
                 Товар додано до кошика!
             </div>
         </div>
-        <div class="col-4" id="product-43">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/dotik2+1.jpg">
-                <h4>Ніжний дотик рушник 2+1 шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 16 штук 48 рулонів)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 736 грн 1 шт/15 грн 33 коп<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 688 грн 1 шт/14 грн 33 коп</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="43">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-43">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-32">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/extra-care1.jpg">
-                <h4>Сніжна панда EXTRA CARE JR рушник 1шт 3шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 6 штук)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 912 грн 1 шт/152 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 846 грн 1 шт/141 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="32">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-32">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-33">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/extra-care2.jpg">
-                <h4>Сніжна панда EXTRA CARE рушник 2шт 3шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 12 штук 24 рулона)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1392 грн 1 шт/58 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 1296 грн 1 шт/54 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="33">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-33">
-                Товар додано до кошика!
-            </div>
-        </div>
-
-
     </div>
-    <div class="row">
-        <div class="col-4" id="product-34">
-            <a href="#">
-                <img src="images/list140.jpg">
-                <h4>Сніжна панда рушники (ЛИСТ) 140 листів 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 24 штуки)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1536 грн 1 шт/64 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 1416 грн 1 шт/59 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>399грн - 1 мішок</option>
-                    <option>700грн - 6 шт</option>
-                    <option>650грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="34">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-34">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-35">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/list120.jpg">
-                <h4>Сніжна панда рушники (ЛИСТ) Експрес 120 листів 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 28 штук)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1232 грн 1 шт/44 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 1148 грн 1 шт/41 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="35">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-35">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-36">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/jumbo.jpg">
-                <h4>Сніжна панда рушники JUMBO ROLL 1шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 6 рулонів)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 804 грн 1 шт/134 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 750 грн 1 шт/125 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="36">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-36">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-37">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/bigroll.jpg">
-                <h4>Сніжна панда рушники BIG ROLL 1шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 18 рулонів)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1314 грн 1 шт/73 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 1206 грн 1 шт/67 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="37">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-37">
-                Товар додано до кошика!
-            </div>
-        </div>
-
-
-    </div>
-    <div class="row">
-        <div class="col-4" id="product-38">
-            <a href="#">
-                <img src="images/panda4.jpg">
-                <h4>Сніжна панда рушники 4шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 8 штук 32 рулона)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1056 грн 1 шт/33 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 976 грн 1 шт/30 грн 50 коп</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>399грн - 1 мішок</option>
-                    <option>700грн - 6 шт</option>
-                    <option>650грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="38">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-38">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-39">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/longextra.jpg">
-                <h4>Сніжна панда рушники 2шт Екстра Лонг 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 12 штук 24 рулона)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1380 грн 1 шт/57 грн 50 коп<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 1272 грн 1 шт/53 грн</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="39">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-39">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-40">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/salad.jpg">
-                <h4>Сніжна панда рушники 2шт Салад Грінс 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 16 штук 32 рулона)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1056 грн 1 шт/33 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 976 грн 1 шт/30 грн 50 коп</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="40">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-40">
-                Товар додано до кошика!
-            </div>
-        </div>
-        <div class="col-4" id="product-41">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
-                <img src="images/2shara.jpg">
-                <h4>Сніжна панда рушники 2шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>(1ящик 16 штук 32 рулона)<br>
-                    до 3999 грн<br>
-                    ЦІНА: 1056 грн 1 шт/33 грн<br>
-                    більше 3999 грн<br>
-                    ЦІНА: 976 грн 1 шт/30 грн 50 коп</p>
-            </a>
-            <div class="select-and-button">
-                <select class="hidden-select">
-                    <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
-                </select>
-                <button class="btn add-to-cart-btn" data-product-id="41">Додати в кошик</button>
-            </div>
-            <div class="popup-message" id="popup-message-41">
-                Товар додано до кошика!
-            </div>
-        </div>
-
-
-    </div>
+    <h1 class="title" id="tender-touch-1">Ніжний дотик</h1>
     <div class="row">
         <div class="col-4" id="product-69">
-            <a href="product-details.html">  <!-- Добавлен тег <a> -->
+            <a href="#">  <!-- Добавлен тег <a> -->
                 <img src="images/2white.jpg">
                 <h4>Ніжний дотик рушник 2 шт 2 шари</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
                 </div>
                 <p>(1 ящик 16 штук 32 рулони)<br>
                     до 3999 грн<br>
@@ -490,9 +198,7 @@
             <div class="select-and-button">
                 <select class="hidden-select">
                     <option value="" disabled selected>Виберіть кількість</option>
-                    <option>299грн - 1 мішок</option>
-                    <option>275грн - 6шт</option>
-                    <option>250грн - 12шт</option>
+                    <option>736грн - 1 мішок</option>
                 </select>
                 <button class="btn add-to-cart-btn" data-product-id="69">Додати в кошик</button>
             </div>
@@ -500,30 +206,319 @@
                 Товар додано до кошика!
             </div>
         </div>
-
-
     </div>
-
-</div>
-
-<!----------Brands--------------->
-<div class="brands">
-    <div class="small-container">
-        <h2 class="title">Наші бренди</h2>
-        <div class="row">
-            <div class="col-5">
-                <img src="images/logo.PNG">
+    <h1 class="title" id="tender-touch-2">Ніжний дотик</h1>
+    <div class="row">
+        <div class="col-4" id="product-43">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/dotik2+1.jpg">
+                <h4>Ніжний дотик рушник 2+1 шт 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 16 штук 48 рулонів)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 736 грн 1 шт/15 грн 33 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 688 грн 1 шт/14 грн 33 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>736грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="43">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-43">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-42">
+            <a href="#">
+                <img src="images/dotik130.jpg">
+                <h4>Ніжний дотик рушник лист 130 шт 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 32 штуки)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1504 грн 1 шт/47 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1408 грн 1 шт/44 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1504грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="42">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-42">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+    <h1 class="title" id="snow-panda-original">Сніжна панда</h1>
+    <div class="row">
+        <div class="col-4" id="product-38">
+            <a href="#">
+                <img src="images/panda4.jpg">
+                <h4>Сніжна панда рушники 4шт 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 8 штук 32 рулона)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1056 грн 1 шт/33 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 976 грн 1 шт/30 грн 50 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1056грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="38">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-38">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-41">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/2shara.jpg">
+                <h4>Сніжна панда рушники 2шт 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 16 штук 32 рулона)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1056 грн 1 шт/33 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 976 грн 1 шт/30 грн 50 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1056грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="41">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-41">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-40">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/salad.jpg">
+                <h4>Сніжна панда рушники 2шт Салад Грінс 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 16 штук 32 рулона)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1056 грн 1 шт/33 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 976 грн 1 шт/30 грн 50 коп</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1056грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="40">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-40">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-39">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/longextra.jpg">
+                <h4>Сніжна панда рушники 2шт Екстра Лонг 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 12 штук 24 рулона)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1380 грн 1 шт/57 грн 50 коп<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1272 грн 1 шт/53 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1380грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="39">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-39">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+    <h1 class="title" id="snow-panda">Сніжна панда (ЛИСТ)</h1>
+    <div class="row">
+        <div class="col-4" id="product-35">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/list120.jpg">
+                <h4>Сніжна панда рушники (ЛИСТ) Експрес 120 листів 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 28 штук)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1232 грн 1 шт/44 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1148 грн 1 шт/41 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1232грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="35">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-35">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-34">
+            <a href="#">
+                <img src="images/list140.jpg">
+                <h4>Сніжна панда рушники (ЛИСТ) 140 листів 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 24 штуки)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1536 грн 1 шт/64 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1416 грн 1 шт/59 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1536грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="34">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-34">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+    <h1 class="title" id="big-roll-series">Серія BIG ROLL</h1>
+    <div class="row">
+        <div class="col-4" id="product-36">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/jumbo.jpg">
+                <h4>Сніжна панда рушники JUMBO ROLL 1шт 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 6 рулонів)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 804 грн 1 шт/134 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 750 грн 1 шт/125 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>804грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="36">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-36">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-37">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/bigroll.jpg">
+                <h4>Сніжна панда рушники BIG ROLL 1шт 2 шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 18 рулонів)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1314 грн 1 шт/73 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1206 грн 1 шт/67 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1314грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="37">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-37">
+                Товар додано до кошика!
+            </div>
+        </div>
+    </div>
+    <h1 class="title" id="ultra-care-series">Серія EXTRA CARE</h1>
+    <div class="row">
+        <div class="col-4" id="product-32">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/extra-care1.jpg">
+                <h4>Сніжна панда EXTRA CARE JR рушник 1шт 3шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 6 штук)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 912 грн 1 шт/152 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 846 грн 1 шт/141 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>912грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="32">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-32">
+                Товар додано до кошика!
+            </div>
+        </div>
+        <div class="col-4" id="product-33">
+            <a href="#">  <!-- Добавлен тег <a> -->
+                <img src="images/extra-care2.jpg">
+                <h4>Сніжна панда EXTRA CARE рушник 2шт 3шари</h4>
+                <div class="rating-bar-container">
+                    <div class="rating-bar"></div>
+                </div>
+                <p>(1ящик 12 штук 24 рулона)<br>
+                    до 3999 грн<br>
+                    ЦІНА: 1392 грн 1 шт/58 грн<br>
+                    більше 3999 грн<br>
+                    ЦІНА: 1296 грн 1 шт/54 грн</p>
+            </a>
+            <div class="select-and-button">
+                <select class="hidden-select">
+                    <option value="" disabled selected>Виберіть кількість</option>
+                    <option>1392грн - 1 мішок</option>
+                </select>
+                <button class="btn add-to-cart-btn" data-product-id="33">Додати в кошик</button>
+            </div>
+            <div class="popup-message" id="popup-message-33">
+                Товар додано до кошика!
             </div>
         </div>
     </div>
 </div>
+
 <!----------Footer--------------->
 
 <div class="footer">
     <div class="container">
         <div class="row">
             <div class="footer-col2">
-                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+                <p id="footer-goal">Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
             </div>
         </div>
         <div class="footer-col3">
@@ -572,25 +567,114 @@
 </script>
 <script>
     let slideIndex = 0;
-    showSlides();
+    let slideInterval;
 
-    function showSlides() {
+    function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 4500); // Change image every 4.5 seconds
+    }
+
+    function startSlides() {
+        showSlides(slideIndex += 1);
+        slideInterval = setTimeout(startSlides, 4000); // Change image every 4 seconds
+    }
+
+    function plusSlides(n) {
+        clearTimeout(slideInterval);
+        showSlides(slideIndex += n);
+        slideInterval = setTimeout(startSlides, 4000); // Restart the interval
+    }
+
+    function currentSlide(n) {
+        clearTimeout(slideInterval);
+        showSlides(slideIndex = n);
+        slideInterval = setTimeout(startSlides, 4000); // Restart the interval
+    }
+
+    // Initialize the slideshow
+    document.addEventListener("DOMContentLoaded", function() {
+        showSlides(slideIndex = 1);
+        slideInterval = setTimeout(startSlides, 4000); // Start the interval
+    });
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Получаем текущее имя файла без расширения
+        let currentPage = window.location.pathname.split('/').pop().split('.')[0];
+
+
+        // Получаем все элементы с классом btn-container
+        let buttons = document.querySelectorAll('.btn-container');
+
+        // Проходим по всем кнопкам и проверяем их data-page атрибут
+        buttons.forEach(button => {
+            if (button.getAttribute('data-page') === currentPage) {
+                button.classList.add('active1'); // Добавляем класс active текущей кнопке
+            }
+        });
+    });
+
+</script>
+<script>
+    const translations = {
+        ua: {
+            "online-shopping": "Купуй онлайн - це вигідно!",
+            "about-us": "Про нас",
+            "contacts": "Контакти",
+            "order-call": "Замовити зворотній <br> дзвінок",
+            "toilet-paper": "Туалетний <br> папір",
+            "paper-towels": "Паперові <br> рушники",
+            "wet-wipes": "Вологі <br> серветки",
+            "paper-napkins": "Паперові <br> серветки",
+            "economy-two-ply": "Серія Біг Ролл (некондиція)",
+            "tender-touch-1": "Ніжний дотик",
+            "tender-touch-2": "Ніжний дотик",
+            "ultra-care-series": "Серія EXTRA CARE",
+            "snow-panda": "Сніжна панда (ЛИСТ)",
+            "snow-panda-original": "Сніжна панда",
+            "big-roll-series": "Серія BIG ROLL",
+            "footer-goal": "Наша мета – дати задоволення та користь від наших товарів доступними для багатьох."
+        },
+        ru: {
+            "online-shopping": "Покупайте онлайн - это выгодно!",
+            "about-us": "О нас",
+            "contacts": "Контакты",
+            "order-call": "Заказать обратный <br> звонок",
+            "toilet-paper": "Туалетная <br> бумага",
+            "paper-towels": "Бумажные <br> полотенца",
+            "wet-wipes": "Влажные <br> салфетки",
+            "paper-napkins": "Бумажные <br> салфетки",
+            "economy-two-ply": "Серия Биг Ролл (некондиция)",
+            "tender-touch-1": "Нежное прикосновение",
+            "tender-touch-2": "Нежное прикосновение",
+            "ultra-care-series": "Серия Ультра Уход",
+            "snow-panda": "Снежная панда",
+            "snow-panda-original": "Снежная панда",
+            "big-roll-series": "Серия Биг Ролл",
+            "footer-goal": "Наша цель – предоставить удовольствие и пользу от наших товаров доступными для многих."
+        }
+    };
+
+    function changeLanguage(lang) {
+        const elements = document.querySelectorAll('[id]');
+        elements.forEach(element => {
+            const key = element.id;
+            if (translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
+            }
+        });
     }
 </script>
 </body>

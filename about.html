@@ -22,11 +22,11 @@
             </div>
             <nav>
                 <ul id="MenuItems">
-                    <li><a href="kupui-online.html">Купуй онлайн - це вигідно!</a></li>
-                    <li><a href="about.html">Про нас</a></li>
-                    <li><a href="contact.html">Контакти</a></li>
-                    <li><a href="contact.html">UA</a></li>
-                    <li><a href="contact.html">RU</a></li>
+                    <li><a href="kupui-online.html" id="online-shopping">Купуй онлайн - це вигідно!</a></li>
+                    <li><a href="about.html" id="about-us">Про нас</a></li>
+                    <li><a href="contact.html" id="contacts">Контакти</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ua')">UA</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ru')">RU</a></li>
                 </ul>
             </nav>
             <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
@@ -35,8 +35,11 @@
         </div>
         <div class="row">
             <div class="col-2">
-                <h1>Про нас</h1>
-                <p>Наша історія: 12 років на ринку України!</p>
+                <h1 id="about-heading">Про нас</h1>
+                <p class="description" id="history-description">Наша історія: 12 років на ринку України!</p>
+            </div>
+            <div class="col-3">
+                <img src="images/about_photo.jpg">
             </div>
         </div>
     </div>
@@ -46,10 +49,10 @@
 <section class="about-us">
     <div class="row">
         <div class="about-col">
-            <h1>ТМ "Сніжна Панда" / Snow Panda є українським брендом</h1>
-            <p>Що спеціалізується на санітарно-гігієнічних продуктах. Це команда кваліфікованих фахівців, чиї навички та особисті переваги перетворюють "Снігову Панду" на лідера ринку та дозволяють ставити тенденції у цій сфері. Ці люди об'єднані загальними принципами та прагненням зробити щоденне життя кожного українця кращим та затишним.</p>
-            <h1>Наше виробництво</h1>
-            <p>Інтегрований виробничо-торговельний підхід у діяльності нашої компанії забезпечує щільну співпрацю між торговими та виробничими колективами "Снігової Панди". Це дозволяє нам зберігати гнучкість, забезпечувати ефективну взаємодію, контролювати кожен крок від початку виробництва до продажу продукції та швидко реагувати на відгуки клієнтів.</p>
+            <h1 id="brand-description-heading">ТМ "Сніжна Панда" / Snow Panda є українським брендом</h1>
+            <p id="brand-description">Що спеціалізується на санітарно-гігієнічних продуктах. Це команда кваліфікованих фахівців, чиї навички та особисті переваги перетворюють "Сніжну Панду" на лідера ринку та дозволяють ставити тенденції у цій сфері. Ці люди об'єднані загальними принципами та прагненням зробити щоденне життя кожного українця кращим та затишним.</p>
+            <h1 id="production-heading">Наше виробництво</h1>
+            <p id="production-description">Інтегрований виробничо-торговельний підхід у діяльності нашої компанії забезпечує щільну співпрацю між торговими та виробничими колективами "Сніжної Панди". Це дозволяє нам зберігати гнучкість, забезпечувати ефективну взаємодію, контролювати кожен крок від початку виробництва до продажу продукції та швидко реагувати на відгуки клієнтів.</p>
         </div>
     </div>
 </section>
@@ -73,7 +76,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-col2">
-                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+                <p id="footer-goal">Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
             </div>
         </div>
         <div class="footer-col3">
@@ -83,8 +86,6 @@
         <p class="copyright">2024 - Всі права захищені.</p>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/basket.js/0.5.2/basket.full.min.js"></script>
-
 
 <!-------------js for toggle menu-------------->
 
@@ -102,7 +103,47 @@
         }
     }
 
+    function changeLanguage(language) {
+        const translations = {
+            ua: {
+                onlineShopping: "Купуй онлайн - це вигідно!",
+                aboutUs: "Про нас",
+                contacts: "Контакти",
+                aboutHeading: "Про нас",
+                historyDescription: "Наша історія: 12 років на ринку України!",
+                brandDescriptionHeading: "ТМ \"Сніжна Панда\" / Snow Panda є українським брендом",
+                brandDescription: "Що спеціалізується на санітарно-гігієнічних продуктах. Це команда кваліфікованих фахівців, чиї навички та особисті переваги перетворюють \"Сніжну Панду\" на лідера ринку та дозволяють ставити тенденції у цій сфері. Ці люди об'єднані загальними принципами та прагненням зробити щоденне життя кожного українця кращим та затишним.",
+                productionHeading: "Наше виробництво",
+                productionDescription: "Інтегрований виробничо-торговельний підхід у діяльності нашої компанії забезпечує щільну співпрацю між торговими та виробничими колективами \"Сніжної Панди\". Це дозволяє нам зберігати гнучкість, забезпечувати ефективну взаємодію, контролювати кожен крок від початку виробництва до продажу продукції та швидко реагувати на відгуки клієнтів.",
+                footerGoal: "Наша мета – дати задоволення та користь від наших товарів доступними для багатьох."
+            },
+            ru: {
+                onlineShopping: "Покупай онлайн - это выгодно!",
+                aboutUs: "О нас",
+                contacts: "Контакты",
+                aboutHeading: "О нас",
+                historyDescription: "Наша история: 12 лет на рынке Украины!",
+                brandDescriptionHeading: "ТМ \"Снежная Панда\" / Snow Panda - украинский бренд",
+                brandDescription: "Который специализируется на санитарно-гигиенических продуктах. Это команда квалифицированных специалистов, чьи навыки и личные предпочтения превращают \"Снежную Панду\" в лидера рынка и позволяют устанавливать тенденции в этой сфере. Эти люди объединены общими принципами и стремлением сделать повседневную жизнь каждого украинца лучше и уютнее.",
+                productionHeading: "Наше производство",
+                productionDescription: "Интегрированный производственно-торговый подход в деятельности нашей компании обеспечивает тесное сотрудничество между торговыми и производственными коллективами \"Снежной Панды\". Это позволяет нам сохранять гибкость, обеспечивать эффективное взаимодействие, контролировать каждый шаг от начала производства до продажи продукции и быстро реагировать на отзывы клиентов.",
+                footerGoal: "Наша цель – предоставить удовольствие и пользу от наших товаров доступными для многих."
+            }
+        };
+
+        document.getElementById('online-shopping').innerHTML = translations[language].onlineShopping;
+        document.getElementById('about-us').innerHTML = translations[language].aboutUs;
+        document.getElementById('contacts').innerHTML = translations[language].contacts;
+        document.getElementById('about-heading').innerHTML = translations[language].aboutHeading;
+        document.getElementById('history-description').innerHTML = translations[language].historyDescription;
+        document.getElementById('brand-description-heading').innerHTML = translations[language].brandDescriptionHeading;
+        document.getElementById('brand-description').innerHTML = translations[language].brandDescription;
+        document.getElementById('production-heading').innerHTML = translations[language].productionHeading;
+        document.getElementById('production-description').innerHTML = translations[language].productionDescription;
+        document.getElementById('footer-goal').innerHTML = translations[language].footerGoal;
+    }
 </script>
+
 <script src="js/main.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {

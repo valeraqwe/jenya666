@@ -25,20 +25,30 @@
                     <li><a href="kupui-online.html">Купуй онлайн - це вигідно!</a></li>
                     <li><a href="about.html">Про нас</a></li>
                     <li><a href="contact.html">Контакти</a></li>
-                    <li><a href="contact.html">UA</a></li>
-                    <li><a href="contact.html">RU</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ua')">UA</a></li>
+                    <li><a href="javascript:void(0)" onclick="changeLanguage('ru')">RU</a></li>
                 </ul>
+
             </nav>
             <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
-            <div id="cartCounter" class="cart-counter">0</div> <!-- Здесь будет отображаться количество товаров в корзине -->
+            <div id="cartCounter" class="cart-counter">0</div>
+            <!-- Здесь будет отображаться количество товаров в корзине -->
             <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
         </div>
         <div class="row">
             <div class="col-2">
-                <h1>Наші контакти</h1>
-                <p><strong>Відділ продажу:</strong> <a href="tel:066-250-42-56">066-250-42-56</a> <br> (Усі месенджери за номером телефону)</p>
-                <p><strong>Наша адреса офісу:</strong> м.Теплодар, вул. Комунальна 3</p>
-                <p><strong>Самовивіз (Склад):</strong> м.Теплодар, вул. Комунальна 3, с.Петродолинське, вул. Карнаухова 32</p>
+                <h1 id="contact-heading">Наші контакти</h1>
+                <div class="description2">
+                    <p class=""><strong id="sales-department">Відділ продажу:</strong> <a href="tel:066-250-42-56">066-250-42-56</a> <br> (Усі
+                        месенджери за номером телефону)</p>
+                    <p class=""><strong id="office-address">Наша адреса офісу:</strong> м.Теплодар, вул. Комунальна 3</p>
+                    <p class=""><strong id="pickup">Самовивіз (Склад):</strong> м.Теплодар, вул. Комунальна 3, с.Петродолинське,
+                        вул.
+                        Карнаухова 32</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <img src="images/contact.png">
             </div>
         </div>
     </div>
@@ -71,12 +81,12 @@
 
 
         <div class="contact-col" id="quickOrderForm">
-            <h3>Зробити швидке замовлення</h3>
+            <h3 id="quick-order">Зробити швидке замовлення</h3>
             <form action="contact_form_handler.php" method="post" id="contactForm" class="contact-col">
                 <input type="text" id="customer_name" name="customer_name" placeholder="Ваше ім'я" required>
                 <input type="tel" id="customer_phone" name="customer_phone" placeholder="Ваш телефон" required>
                 <textarea id="message_content" name="message_content" placeholder="Ваш коментар" rows="4"></textarea>
-                <button type="submit" class="hero-btn red-btn">Відправити</button>
+                <button type="submit" class="hero-btn red-btn" id="send">Відправити</button>
             </form>
         </div>
 
@@ -87,11 +97,10 @@
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Дякуємо за ваше повідомлення!</h2>
-                <p>Ми скоро зв'яжемося з вами.</p>
+                <h2 id="thank-you">Дякуємо за ваше повідомлення!</h2>
+                <p id="soon-contact">Ми скоро зв'яжемося з вами.</p>
             </div>
         </div>
-
 
 
     </div>
@@ -101,7 +110,6 @@
 
 
 <!-------------- Our Featured Products -------------->
-
 
 
 <!----------offer--------------->
@@ -116,7 +124,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-col2">
-                <p>Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
+                <p id="goal">Наша мета – дати задоволення та користь від наших товарів доступними для багатьох.</p>
             </div>
         </div>
         <div class="footer-col3">
@@ -156,12 +164,12 @@
     var span = document.getElementsByClassName("close")[0];
 
     // При клике на элемент "Закрыть" закройте модальное окно
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 
     // При клике вне модального окна закройте его
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
@@ -172,11 +180,11 @@
         modal.style.display = "block";
 
         // Установите таймер на 2 секунды, после которого модальное окно начнет плавно исчезать
-        setTimeout(function() {
+        setTimeout(function () {
             modal.classList.add('fade-out');
 
             // После завершения анимации скрываем модальное окно и удаляем класс fade-out
-            setTimeout(function() {
+            setTimeout(function () {
                 modal.style.display = "none";
                 modal.classList.remove('fade-out');
             }, 2000);  // это время должно соответствовать duration вашей CSS-анимации
@@ -202,9 +210,46 @@
         }
     }
 
+    function changeLanguage(language) {
+        const translations = {
+            ua: {
+                contactHeading: "Наші контакти",
+                salesDepartment: "Відділ продажу:",
+                officeAddress: "Наша адреса офісу:",
+                pickup: "Самовивіз (Склад):",
+                quickOrder: "Зробити швидке замовлення",
+                send: "Відправити",
+                thankYou: "Дякуємо за ваше повідомлення!",
+                soonContact: "Ми скоро зв'яжемося з вами.",
+                footerGoal: "Наша мета – дати задоволення та користь від наших товарів доступними для багатьох."
+            },
+            ru: {
+                contactHeading: "Наши контакты",
+                salesDepartment: "Отдел продажа:",
+                officeAddress: "Наш адрес офиса:",
+                pickup: "Самовывоз (Склад):",
+                quickOrder: "Сделать быстрый заказ",
+                send: "Отправить",
+                thankYou: "Спасибо за ваше сообщение!",
+                soonContact: "Мы скоро свяжемся с вами.",
+                footerGoal: "Наша цель – предоставить удовольствие и пользу от наших товаров доступными для многих."
+            }
+        };
+
+        // Обновляем текст на странице согласно выбранному языку
+        document.getElementById('contact-heading').innerText = translations[language].contactHeading;
+        document.getElementById('sales-department').innerText = translations[language].salesDepartment;
+        document.getElementById('office-address').innerText = translations[language].officeAddress;
+        document.getElementById('pickup').innerText = translations[language].pickup;
+        document.getElementById('quick-order').innerText = translations[language].quickOrder;
+        document.getElementById('send').innerText = translations[language].send;
+        document.getElementById('thank-you').innerText = translations[language].thankYou;
+        document.getElementById('soon-contact').innerText = translations[language].soonContact;
+        document.getElementById('footer-goal').innerText = translations[language].footerGoal;
+    }
+
 </script>
 <script src="js/main.js"></script>
 <script src="js/cart.js"></script>
 </body>
 </html>
-
