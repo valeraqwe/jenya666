@@ -1,5 +1,3 @@
-let cart;
-
 document.addEventListener("DOMContentLoaded", function () {
     cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
@@ -80,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCart();
     });
+
     function showPopup() {
         const popupElement = document.getElementById("thankYouPopup");
         if (popupElement) {
@@ -107,6 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCart();
     }
 
+    function generateTransactionId() {
+        const datePart = Date.now().toString(36); // преобразует текущую дату в строку в формате base36
+        const randomPart = Math.random().toString(36).substring(2, 10); // генерирует случайную строку
+        return datePart + randomPart;
+    }
+
     document.getElementById("orderForm").addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -122,6 +127,36 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 if (data.result === true) {
+                    // Генерация уникального идентификатора транзакции
+                    let transactionId = generateTransactionId();
+                    let totalValue = 0;  // Общая стоимость транзакции
+                    let currency = 'UAH';  // Валюта
+
+                    let items = cart.map(item => ({
+                        item_name: item.name,
+                        item_id: item.id,
+                        price: item.price,
+                        currency: currency,
+                        quantity: item.quantity
+                    }));
+
+                    // Подсчитываем общую стоимость
+                    items.forEach(item => {
+                        totalValue += item.price * item.quantity;
+                    });
+
+                    // Отправка данных в Google Tag Manager
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'purchase',
+                        ecommerce: {
+                            transaction_id: transactionId,
+                            value: totalValue.toFixed(2),
+                            currency: currency,
+                            items: items
+                        }
+                    });
+
                     clearCart();
                     showPopup();
                     document.getElementById("orderForm").reset();
