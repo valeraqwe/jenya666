@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log('Скрипт загружен и выполнен');
+
     cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
     const cartItemsContainer = document.querySelector(".cart-items");
@@ -145,9 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         totalValue += item.price * item.quantity;
                     });
 
-                    // Отправка данных в Google Tag Manager
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({
+                    // Подготовка данных для отправки в dataLayer
+                    const purchaseData = {
                         event: 'purchase',
                         ecommerce: {
                             transaction_id: transactionId,
@@ -155,7 +156,16 @@ document.addEventListener("DOMContentLoaded", function () {
                             currency: currency,
                             items: items
                         }
-                    });
+                    };
+
+                    // Проверка существования dataLayer и его инициализация при необходимости
+                    if (typeof window.dataLayer === 'undefined') {
+                        window.dataLayer = [];
+                    }
+
+                    console.log('Отправка данных в dataLayer:', purchaseData);
+                    window.dataLayer.push(purchaseData);
+                    console.log('Данные успешно отправлены в dataLayer:', purchaseData);
 
                     clearCart();
                     showPopup();
