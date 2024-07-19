@@ -45,12 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 productRow.innerHTML = `
                     <div class="cart-item-detail" data-label="Product"><img src="${product.image}" alt="${product.name}" width="50"></div>
                     <div class="cart-item-detail" data-label="Size">${product.size}</div>
-                    <div class="cart-item-detail" data-label="Price">₴${product.price}</div>
+                    <div class="cart-item-detail" data-label="Price">
+                        <span class="total-price">₴${(product.price * product.quantity).toFixed(2)}</span>
+                    </div>
                     <div class="cart-item-detail" data-label="Quantity">
                         <div class="quantity-wrapper">
-                            <button class="quantity-btn decrease-quantity" data-index="${index}">-</button>
-                            <span class="quantity-number">${product.quantity}</span>
                             <button class="quantity-btn increase-quantity" data-index="${index}">+</button>
+                            <span class="quantity-number">${product.quantity}</span>
+                            <button class="quantity-btn decrease-quantity" data-index="${index}">-</button>
                         </div>
                     </div>
                     <div class="cart-item-detail" data-label="Remove"><button class="remove-from-cart-btn" data-index="${index}">🗑️</button></div>
@@ -109,8 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function generateTransactionId() {
-        const datePart = Date.now().toString(36); // преобразует текущую дату в строку в формате base36
-        const randomPart = Math.random().toString(36).substring(2, 10); // генерирует случайную строку
+        const datePart = Date.now().toString(36);
+        const randomPart = Math.random().toString(36).substring(2, 10);
         return datePart + randomPart;
     }
 
@@ -129,10 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 if (data.result === true) {
-                    // Генерация уникального идентификатора транзакции
                     let transactionId = generateTransactionId();
-                    let totalValue = 0;  // Общая стоимость транзакции
-                    let currency = 'UAH';  // Валюта
+                    let totalValue = 0;
+                    let currency = 'UAH';
 
                     let items = cart.map(item => ({
                         item_name: item.name,
@@ -142,12 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         quantity: item.quantity
                     }));
 
-                    // Подсчитываем общую стоимость
                     items.forEach(item => {
                         totalValue += item.price * item.quantity;
                     });
 
-                    // Подготовка данных для отправки в dataLayer
                     const purchaseData = {
                         event: 'purchase',
                         ecommerce: {
@@ -158,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     };
 
-                    // Проверка существования dataLayer и его инициализация при необходимости
                     if (typeof window.dataLayer === 'undefined') {
                         window.dataLayer = [];
                     }

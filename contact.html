@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакти | Сніжна Панда</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PTPXPQK4');</script>
+    <!-- End Google Tag Manager -->
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐼</text></svg>">
@@ -13,6 +21,10 @@
     <script src="script.js"></script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTPXPQK4"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="header">
     <div class="container">
@@ -58,6 +70,17 @@
 <section class="contact-us" style="margin-top: 23px">
 
     <div class="row">
+
+        <div class="contact-col" id="quickOrderForm">
+            <h3 id="quick-order">Зробити швидке замовлення</h3>
+            <form action="contact_form_handler.php" method="post" id="contactForm" class="contact-col">
+                <input type="text" id="customer_name" name="customer_name" placeholder="Ваше ім'я" required>
+                <input type="tel" id="customer_phone" name="customer_phone" placeholder="Ваш телефон" required>
+                <textarea id="message_content" name="message_content" placeholder="Ваш коментар" rows="4"></textarea>
+                <button type="submit" class="hero-btn red-btn" id="send">Відправити</button>
+            </form>
+        </div>
+
         <div class="contact-col">
             <div>
                 <i class="fa fa-home"></i>
@@ -77,17 +100,6 @@
           <h5>zavod-panda@gmail.com</h5>
         </span>
             </div>
-        </div>
-
-
-        <div class="contact-col" id="quickOrderForm">
-            <h3 id="quick-order">Зробити швидке замовлення</h3>
-            <form action="contact_form_handler.php" method="post" id="contactForm" class="contact-col">
-                <input type="text" id="customer_name" name="customer_name" placeholder="Ваше ім'я" required>
-                <input type="tel" id="customer_phone" name="customer_phone" placeholder="Ваш телефон" required>
-                <textarea id="message_content" name="message_content" placeholder="Ваш коментар" rows="4"></textarea>
-                <button type="submit" class="hero-btn red-btn" id="send">Відправити</button>
-            </form>
         </div>
 
         <!-- End of Order Form -->

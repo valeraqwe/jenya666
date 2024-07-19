@@ -72,7 +72,7 @@
                 <input type="text" name="customer_phone" placeholder="Телефон" required pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
             <div class="form-group">
-                <input type="text" name="customer_city" placeholder="Місто">
+                <input type="text" name="customer_city" placeholder="Місто або населений пункт">
             </div>
             <div class="form-group">
                 <select id="customer_region" name="customer_region" required>
@@ -108,10 +108,18 @@
                 <select id="delivery_method" name="delivery_method">
                     <option value="new_post">Нова Пошта</option>
                     <option value="ukr_post">Укрпошта</option>
+                    <option value="self_pickup">Самовивіз</option>
                 </select>
             </div>
             <div class="form-group">
-                <input type="number" name="post_office" placeholder="Номер відділення" min="1" max="10000" required>
+                <input type="number" name="post_office" placeholder="Номер відділення або індекс пошти" min="1" max="10000000000000000">
+            </div>
+            <div class="form-group">
+                <label for="callback_request">Перезвонити вам після замовлення?</label>
+                <select id="callback_request" name="callback_request" required>
+                    <option value="no">Ні</option>
+                    <option value="yes">Так</option>
+                </select>
             </div>
             <div class="form-group">
                 <textarea name="order_comment" placeholder="Коментар до замовлення"></textarea>
@@ -127,7 +135,7 @@
             </div>
             <div class="form-group">
                 <button type="submit">Оформити замовлення</button>
-            </div><!-- your form fields here -->
+            </div>
         </form>
         <!-- End of Order Form -->
 
